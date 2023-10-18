@@ -23,9 +23,9 @@
   color: var(--crimson);
 }
 
-.home button:hover {
+/* .home button:hover {
   transform: scale(1.02);
-}
+} */
 .home__img {
   display: block;
   margin: 0 auto;
