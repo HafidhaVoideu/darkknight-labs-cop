@@ -8,20 +8,11 @@ import Partners from "./scenes/sections/partners/Partners";
 import About from "./scenes/sections/about/About";
 import Footer from "./scenes/global/footer/footer";
 
+import { setGlowEffectRx } from "./utils/functions";
+
 function App() {
   useEffect(() => {
-    (function setGlowEffectRx() {
-      const glowEffects = document.querySelectorAll(".glow-effect");
-
-      glowEffects.forEach((glowEffect) => {
-        const glowLines = glowEffect.querySelectorAll("rect");
-        const rx = getComputedStyle(glowEffect).borderRadius;
-
-        glowLines.forEach((line) => {
-          line.setAttribute("rx", rx);
-        });
-      });
-    })();
+    setGlowEffectRx();
   });
 
   return (

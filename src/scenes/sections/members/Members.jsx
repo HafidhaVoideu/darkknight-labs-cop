@@ -41,18 +41,18 @@ const Card = () => {
     <Tilt options={defaultOptions}>
       <motion.article variants={card} className="card ">
         <article className=" card__article   ">
-          <div class="avatar glow-effect" data-glow-animation="grow">
+          <div className="avatar glow-effect" data-glow-animation="grow">
             <img src={profile} alt="profile" />
-            <svg class="glow-container">
+            <svg className="glow-container">
               <rect
                 pathLength="100"
-                stroke-linecap="round"
-                class="glow-blur"
+                strokeLinecap="round"
+                className="glow-blur"
               ></rect>
               <rect
                 pathLength="100"
-                stroke-linecap="round"
-                class="glow-line"
+                strokeLinecap="round"
+                className="glow-line"
               ></rect>
             </svg>
           </div>

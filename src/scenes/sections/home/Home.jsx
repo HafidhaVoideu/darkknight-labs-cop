@@ -16,21 +16,9 @@ const Home = () => {
           <img src={logo} alt="logo" className=" home__img " />
         </motion.div>
 
-        <button className=" home__btn glow-effect">
+        <a href="#" className="home__btn">
           Connect To Discord
-          <svg class="glow-container">
-            <rect
-              pathLength="100"
-              stroke-linecap="round"
-              class="glow-blur"
-            ></rect>
-            <rect
-              pathLength="100"
-              stroke-linecap="round"
-              class="glow-line"
-            ></rect>
-          </svg>
-        </button>
+        </a>
 
         <motion.div
           variants={staggerContainer()}

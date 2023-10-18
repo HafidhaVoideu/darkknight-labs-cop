@@ -263,6 +263,10 @@ html::-webkit-scrollbar-thumb {
   stroke-dasharray: var(--glow-line-length) calc(20px - var(--glow-line-length));
 }
 
+.glow-effect .glow-container {
+  animation: glow-visibility ease-in-out var(--animation-speed) infinite;
+}
+
 .glow-line {
   stroke: var(--glow-line-color);
   stroke-width: var(--glow-line-thickness);
@@ -274,8 +278,15 @@ html::-webkit-scrollbar-thumb {
   stroke-width: var(--glow-blur-size);
 }
 
-.glow-effect .glow-container {
-  animation: glow-visibility ease-in-out var(--animation-speed) infinite;
+@keyframes glow-visibility {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  25%,
+  75% {
+    opacity: 1;
+  }
 }
 
 @keyframes glow-visibility {
@@ -296,7 +307,6 @@ img {
 
 .avatar {
   width: 53%;
-
   border-radius: 50%;
 }
 
