@@ -17,8 +17,9 @@
 .home__btn {
   display: block;
   cursor: pointer;
+  text-align: center;
   border: solid 1px var(--crimson);
-  padding: 1rem;
+  padding: 1.3rem;
   font-size: 1.2rem;
   border: 0;
   color: var(--crimson);
