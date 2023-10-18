@@ -103,7 +103,7 @@ p {
 }
 @media screen and (min-width: 1024px) {
   .title {
-    font-size: 5rem;
+    font-size: 4.7rem;
   }
   p {
     max-width: 800px;
@@ -274,7 +274,7 @@ html::-webkit-scrollbar-thumb {
   /* rx: 1.25rem; */
   fill: transparent;
   stroke: black;
-  stroke-width: 3px;
+  stroke-width: 2px;
   stroke-dasharray: var(--glow-line-length) calc(20px - var(--glow-line-length));
 }
 

@@ -17,20 +17,14 @@
 .home__btn {
   display: block;
   cursor: pointer;
-  text-align: center;
-  border: solid 1px var(--crimson);
   padding: 1.3rem;
   font-size: 1.2rem;
   border: 0;
   color: var(--crimson);
 }
 
-.home button {
-  transition: all 0.2s ease-our;
-}
 .home button:hover {
-  transform: scale(1.03);
-  transition: all 0.2s ease-in;
+  transform: scale(1.02);
 }
 .home__img {
   display: block;
