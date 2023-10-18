@@ -16,20 +16,20 @@
 
 .home__btn {
   cursor: pointer;
-  padding: 1.2rem;
+  padding: 1.07rem;
   font-size: 1rem;
   text-align: center;
-  border: solid var(--crimson) 1px;
+
+  border: solid var(--crimson) 2px;
   color: var(--crimson);
-  transition: all 0.2s ease-in;
 }
 
-.home__btn:hover {
+/* .home__btn:hover {
   transform: scale(1.02);
   transition: all 0.1s ease-in-out;
   border-color: var(--golden);
   color: var(--golden);
-}
+} */
 .home__img {
   display: block;
   margin: 0 auto;

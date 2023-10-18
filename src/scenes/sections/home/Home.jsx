@@ -16,8 +16,20 @@ const Home = () => {
           <img src={logo} alt="logo" className=" home__img " />
         </motion.div>
 
-        <a href="#" className="home__btn">
+        <a href="#" className="home__btn glow-effect">
           Connect To Discord
+          <svg class="glow-container">
+            <rect
+              pathLength="100"
+              stroke-linecap="round"
+              class="glow-blur"
+            ></rect>
+            <rect
+              pathLength="100"
+              stroke-linecap="round"
+              class="glow-line"
+            ></rect>
+          </svg>
         </a>
 
         <motion.div
