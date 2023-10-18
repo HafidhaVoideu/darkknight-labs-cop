@@ -250,7 +250,7 @@ html::-webkit-scrollbar-thumb {
   --glow-blur-color: #fff;
   --glow-blur-size: 5px;
   --glow-offset: 0px;
-  --animation-speed: 1200ms;
+  --animation-speed: 2200ms;
   /* do not change, used for calculations */
   --container-offset: 100px;
   position: relative;
