@@ -15,13 +15,12 @@
 }
 
 .home__btn {
-  display: flex;
-
+  display: block;
   cursor: pointer;
   border: solid 1px var(--crimson);
   padding: 1rem;
   font-size: 1.2rem;
-
+  border: 0;
   color: var(--crimson);
 }
 

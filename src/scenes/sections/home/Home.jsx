@@ -17,7 +17,7 @@ const Home = () => {
         </motion.div>
 
         <button className=" home__btn glow-effect">
-          <a href="#">Connect To Discord</a>
+          Connect To Discord
           <svg class="glow-container">
             <rect
               pathLength="100"
