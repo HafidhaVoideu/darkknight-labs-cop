@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.8rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
 }
 .footer p {
   text-align: center;
@@ -18,11 +18,11 @@
 
 .footer__main a {
   color: var(--crimson);
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 
 @media screen and (min-width: 600px) {
   .footer__main a {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 }
