@@ -1,0 +1,68 @@
+.home {
+  background-color: #0c0c0c;
+  background-size: cover;
+  background: linear-gradient(to left, #010101ba, #000000fe),
+    url(../../../assets/bg2.jpg) no-repeat top center;
+  padding: 3rem 0rem;
+  overflow-x: hidden;
+}
+
+.home__div {
+  display: grid;
+  place-items: center;
+  padding: 1rem 0rem;
+  gap: 3rem;
+}
+
+.home__btn {
+  display: flex;
+
+  cursor: pointer;
+  border: solid 1px var(--crimson);
+  padding: 1rem;
+  font-size: 1.2rem;
+
+  color: var(--crimson);
+}
+
+.home button {
+  transition: all 0.2s ease-our;
+}
+.home button:hover {
+  transform: scale(1.03);
+  transition: all 0.2s ease-in;
+}
+.home__img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 750px;
+}
+
+@media screen and (min-width: 678px) {
+  .home {
+    min-height: 100vh;
+  }
+
+  .home__img {
+    width: 70%;
+  }
+
+  .home__btn {
+    font-size: 1.4rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .home {
+    min-height: 100vh;
+  }
+
+  .home__img {
+    width: 90%;
+  }
+
+  .home__btn {
+    font-size: 1.9rem;
+  }
+}

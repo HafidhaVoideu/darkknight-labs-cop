@@ -1,0 +1,25 @@
+.partners {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  gap: 3rem;
+  padding: 0.5rem;
+  margin-top: 2rem;
+}
+
+@media screen and (min-width: 370px) {
+  .partners {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (min-width: 700px) {
+  .partners {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .partners {
+    gap: 6rem;
+  }
+}

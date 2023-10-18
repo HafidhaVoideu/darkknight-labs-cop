@@ -1,0 +1,322 @@
+@import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Didact+Gothic&family=MedievalSharp&display=swap");
+
+:root {
+  --black: #090a0b;
+  --crimson: #f5efdb;
+  --golden: #dcca87;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.main {
+  display: grid;
+  place-content: center;
+  gap: 2rem;
+  min-height: 100vh;
+  background-image: conic-gradient(
+    at 125% 50%,
+    #b78cf7,
+    #ff7c94,
+    #ffcf0d,
+    #ff7c94,
+    #b78cf7
+  );
+}
+
+*,
+body,
+html {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  font-family: "MedievalSharp", cursive;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+a,
+a:visited {
+  color: var(--crimson);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.typing-text {
+  font-size: 0.72rem;
+  text-transform: capitalize;
+  text-align: center;
+  padding: 0.5rem;
+  margin-top: 1.5rem;
+
+  color: var(--crimson);
+}
+
+.shadow {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 35px,
+    rgba(244, 243, 243, 0.12) 0px -12px 30px, #ffffff1f 0px 4px 6px,
+    rgba(223, 216, 216, 0.17) 0px 12px 13px,
+    rgba(250, 247, 247, 0.09) 0px -3px 5px;
+}
+
+p {
+  max-width: 650px;
+  color: var(--crimson);
+  font-family: Didact Gothic, sans-serif;
+}
+
+.title {
+  font-size: 3rem;
+  margin: 2rem 0;
+  text-transform: uppercase;
+  color: var(--crimson);
+  text-align: center;
+}
+
+@media screen and (min-width: 400px) {
+  .title {
+    font-size: 3.6rem;
+  }
+}
+@media screen and (min-width: 600px) {
+  .title {
+    font-size: 4.2rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .title {
+    font-size: 5rem;
+  }
+  p {
+    max-width: 800px;
+  }
+}
+
+.text-effect {
+  position: relative;
+  animation: animate 5s linear infinite;
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+@keyframes animate {
+  0%,
+  18%,
+  20%,
+  50.1%,
+  60%,
+  65.1%,
+  80%,
+  90.1%,
+  92% {
+    color: #4d4d4d;
+    text-shadow: none;
+  }
+
+  18.1%,
+  20.1%,
+  30%,
+  50%,
+  60.1%,
+  65%,
+  100% {
+    color: #fff;
+    text-shadow: 0 0 10px #e4ddc7, 0 0 20px #e4ddc7, 0 0 40px #e4ddc7,
+      0 0 80px #e4ddc7, 0 0 160px #e4ddc7;
+  }
+}
+
+html::-webkit-scrollbar {
+  width: 9px;
+}
+html::-webkit-scrollbar-track {
+  background-color: #686666;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #212121;
+}
+
+::selection {
+  background-color: #686666;
+}
+
+.section {
+  min-height: 100vh;
+  width: 100%;
+  padding: 6rem 1rem;
+  background-color: #0c0c0c;
+  border-bottom: solid rgb(43, 43, 43) 1px;
+}
+
+.container {
+  display: grid;
+  place-items: center;
+  max-width: 1500px;
+  min-height: 50vh;
+  padding: 6rem 0rem;
+
+  margin: 0 auto;
+}
+
+.home-bg {
+  background-color: #0c0c0c;
+  background-size: cover;
+  background: linear-gradient(to left, #010101ba, #000000fe),
+    url(./assets//bg2.jpg) no-repeat top center;
+}
+
+.service,
+.card {
+  position: relative;
+  border-radius: 2px;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4.7px);
+  -webkit-backdrop-filter: blur(4.7px);
+}
+
+.shadow {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 35px,
+    rgba(244, 243, 243, 0.12) 0px -12px 30px, #ffffff1f 0px 4px 6px,
+    rgba(223, 216, 216, 0.17) 0px 12px 13px,
+    rgba(250, 247, 247, 0.09) 0px -3px 5px;
+}
+
+@media screen and (min-width: 678px) {
+  .home-bg {
+    min-height: 100vh;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .container {
+    padding: 5rem 2rem;
+  }
+  .section {
+    padding: 6rem 0rem;
+  }
+}
+
+@media screen and (min-width: 290px) {
+  .typing-text {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (min-width: 370px) {
+  .typing-text {
+    font-size: 0.93rem;
+  }
+}
+@media screen and (min-width: 400px) {
+  .typing-text {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 520px) {
+  .typing-text {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 700px) {
+  .typing-text {
+    font-size: 1.7rem;
+  }
+}
+
+.glow-effect {
+  --glow-line-color: #fff;
+  --glow-line-thickness: 2px;
+  --glow-line-length: 20px;
+  --glow-blur-color: #fff;
+  --glow-blur-size: 5px;
+  --glow-offset: 0px;
+  --animation-speed: 1200ms;
+  /* do not change, used for calculations */
+  --container-offset: 100px;
+  position: relative;
+}
+
+.glow-container {
+  pointer-events: none;
+  position: absolute;
+  inset: calc(var(--container-offset) / -2);
+  width: calc(100% + var(--container-offset));
+  height: calc(100% + var(--container-offset));
+  opacity: 0;
+}
+
+.glow-blur,
+.glow-line {
+  width: calc(100% - var(--container-offset) + var(--glow-offset));
+  height: calc(100% - var(--container-offset) + var(--glow-offset));
+  x: calc((var(--container-offset) / 2) + calc(var(--glow-offset) / -2));
+  y: calc((var(--container-offset) / 2) + calc(var(--glow-offset) / -2));
+  /* rx: 1.25rem; */
+  fill: transparent;
+  stroke: black;
+  stroke-width: 3px;
+  stroke-dasharray: var(--glow-line-length) calc(20px - var(--glow-line-length));
+}
+
+.glow-line {
+  stroke: var(--glow-line-color);
+  stroke-width: var(--glow-line-thickness);
+}
+
+.glow-blur {
+  filter: blur(var(--glow-blur-size));
+  stroke: var(--glow-blur-color);
+  stroke-width: var(--glow-blur-size);
+}
+
+.glow-effect .glow-container {
+  animation: glow-visibility ease-in-out var(--animation-speed) infinite;
+}
+
+@keyframes glow-visibility {
+  0%,
+  40% {
+    opacity: 0, 55;
+  }
+  35%,
+  75% {
+    opacity: 0.6;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.avatar {
+  width: 53%;
+
+  border-radius: 50%;
+}
+
+.avatar img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: inherit;
+}

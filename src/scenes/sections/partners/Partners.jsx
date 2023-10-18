@@ -1,0 +1,31 @@
+import React from "react";
+import Partner from "../../../components/partner/Partner";
+import Title from "../../../components/Title";
+import "./partners.css";
+
+const Partners = () => {
+  return (
+    <section id="partners" className="section">
+      <Title text="Track Record & Partners" />
+
+      <div className="container">
+        <section className="  partners  ">
+          <Partner />
+          <Partner />
+          <Partner />
+          <Partner />
+          <Partner />
+          <Partner />
+          <Partner />
+          <Partner />
+          <Partner />
+          <Partner />
+          <Partner />
+          <Partner />
+        </section>
+      </div>
+    </section>
+  );
+};
+
+export default Partners;

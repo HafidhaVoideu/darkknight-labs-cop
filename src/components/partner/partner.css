@@ -1,0 +1,27 @@
+.partner {
+  border-radius: 100%;
+  padding: 1.5rem;
+}
+
+.partner__title {
+  margin-top: 3rem;
+  font-size: 1rem;
+  text-align: center;
+  color: var(--crimson);
+}
+
+.partner img {
+  width: 40px;
+}
+
+@media screen and (min-width: 600px) {
+  .partner {
+    padding: 2.5rem;
+  }
+  .partner img {
+    width: 60px;
+  }
+  .partner__title {
+    font-size: 1.3rem;
+  }
+}
