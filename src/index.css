@@ -160,7 +160,7 @@ html::-webkit-scrollbar-thumb {
 .section {
   min-height: 100vh;
   width: 100%;
-  padding: 4rem 1rem;
+  padding: 3rem 1rem;
   background-color: #0c0c0c;
   border-bottom: solid rgb(43, 43, 43) 1px;
 }
@@ -170,7 +170,7 @@ html::-webkit-scrollbar-thumb {
   place-items: center;
   max-width: 1200px;
   min-height: 50vh;
-  padding: 4rem 0rem;
+  padding: 3rem 0rem;
 
   margin: 0 auto;
 }
@@ -210,7 +210,7 @@ html::-webkit-scrollbar-thumb {
     padding: 5rem 3rem;
   }
   .section {
-    padding: 6rem 0rem;
+    padding: 5rem 0rem;
   }
 }
 
