@@ -101,6 +101,11 @@
   border: solid 1px var(--crimson);
   padding: 0.5em 1em;
 }
+.header__desktop__btn:hover {
+  border-color: var(--golden);
+  transition: all 0.2s ease-in-out;
+  color: var(--golden);
+}
 
 @media screen and (min-width: 1024px) {
   .header {
