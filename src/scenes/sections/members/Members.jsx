@@ -4,9 +4,7 @@ import "./members.css";
 import { motion, easeIn } from "framer-motion";
 
 import Title from "../../../components/Title";
-
 import { Tilt } from "react-tilt";
-
 import { members } from "../../../data/members";
 
 const container = {

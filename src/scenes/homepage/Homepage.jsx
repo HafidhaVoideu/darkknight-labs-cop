@@ -17,15 +17,10 @@ const Homepage = () => {
     <>
       <Header />
       <Home />
-
       <Services />
-
       <Members />
-
       <Partners />
-
       <About />
-
       <Footer />
     </>
   );
