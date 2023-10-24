@@ -5,7 +5,6 @@ import { useEffect } from "react";
 import { setGlowEffectRx } from "./utils/functions";
 
 import Homepage from "./scenes/homepage/Homepage";
-import Footer from "./scenes/global/footer/Footer";
 
 function App() {
   useEffect(() => {
@@ -17,7 +16,6 @@ function App() {
       {/* <Dashboard /> */}
 
       <Homepage />
-      <Footer/>
     </>
   );
 }
