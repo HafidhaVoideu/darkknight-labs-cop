@@ -16,7 +16,7 @@ import img15 from "../assets/pictures/image24.png";
 import img16 from "../assets/pictures/image33.png";
 import img17 from "../assets/pictures/image14.png";
 
-import img18 from "../assets/pictures/image14.png";
+import img18 from "../assets/logos/logo6.png";
 
 import img19 from "../assets/pictures/image45.png";
 import img20 from "../assets/pictures/image23.png";
