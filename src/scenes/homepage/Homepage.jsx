@@ -10,7 +10,6 @@ import Members from "../sections/members/Members";
 
 import Partners from "../sections/partners/Partners";
 import About from "../sections/about/About";
-import Footer from "../global/footer/Footer";
 
 const Homepage = () => {
   return (
