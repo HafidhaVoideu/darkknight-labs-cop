@@ -200,21 +200,6 @@ p {
     rgba(250, 247, 247, 0.09) 0px -3px 5px;
 }
 
-@media screen and (min-width: 678px) {
-  .home-bg {
-    min-height: 100vh;
-  }
-}
-
-@media screen and (min-width: 700px) {
-  .container {
-    padding: 5rem 3rem;
-  }
-  .section {
-    padding: 5rem 0rem;
-  }
-}
-
 @media screen and (min-width: 290px) {
   .typing-text {
     font-size: 0.8rem;
@@ -236,6 +221,22 @@ p {
     font-size: 1.3rem;
   }
 }
+
+@media screen and (min-width: 678px) {
+  .home-bg {
+    min-height: 100vh;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .container {
+    padding: 5rem 3rem;
+  }
+  .section {
+    padding: 5rem 0rem;
+  }
+}
+
 @media screen and (min-width: 700px) {
   .typing-text {
     font-size: 1.5rem;
@@ -307,7 +308,7 @@ img {
 }
 
 .avatar {
-  width: 73%;
+  width: 67%;
   border-radius: 50%;
 }
 

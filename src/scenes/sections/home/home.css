@@ -4,6 +4,8 @@
   background: linear-gradient(to left, #010101ba, #000000fe),
     url(../../../assets/bg2.jpg) no-repeat top center;
   padding: 3rem 0rem;
+  min-height: 88vh;
+
   overflow-x: hidden;
 }
 
@@ -11,7 +13,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3rem;
+  gap: 2.5rem;
 }
 
 .home__btn {
@@ -22,8 +24,6 @@
   padding: 1.07rem;
   font-size: 1rem;
   text-align: center;
-
-  /* border: solid var(--crimson) 2px; */
   color: var(--crimson);
 }
 
@@ -55,20 +55,12 @@
 }
 
 @media screen and (min-width: 678px) {
-  .home {
-    min-height: 100vh;
-  }
-
   .home__img {
     width: 70%;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .home {
-    min-height: 100vh;
-  }
-
   .home__btn {
     font-size: 1.2rem;
   }

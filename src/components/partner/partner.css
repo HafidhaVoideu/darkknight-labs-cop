@@ -16,7 +16,7 @@
 }
 
 .partner img {
-  width: 170px;
+  width: 140px;
 }
 
 @media screen and (min-width: 800px) {
@@ -24,7 +24,7 @@
     padding: 1.7rem;
   }
   .partner img {
-    width: 250px;
+    width: 160px;
   }
   .partner__title {
     font-size: 1.1rem;

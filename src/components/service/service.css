@@ -2,10 +2,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   padding: 1.6rem;
-  gap: 2rem;
+  gap: 1rem;
   max-width: 470px;
+  min-height: 300px;
 
   background-color: #171717;
 }
@@ -14,7 +14,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+
+  justify-content: flex-start;
+
   gap: 0.5rem;
   color: var(--crimson);
   text-align: center;
@@ -23,14 +25,11 @@
 }
 
 .service__icon {
-  width: 80px;
+  width: 70px;
 
-  /* height: auto; */
   color: #d3d2cd;
   filter: invert(99%) sepia(3%) saturate(1543%) hue-rotate(328deg)
     brightness(99%) contrast(93%);
-
-  /* color: #dcca87; */
 }
 
 .service__title {
@@ -39,7 +38,7 @@
 }
 
 .service__des {
-  font-size: 1rem;
+  font-size: 0.95rem;
   line-height: 1.4;
   text-align: center;
   font-family: "Didact Gothic", sans-serif;
@@ -54,7 +53,6 @@
 @media screen and (min-width: 1024px) {
   .service {
     padding: 1rem;
-    max-width: 100%;
   }
 
   .service__title {
