@@ -1,0 +1,29 @@
+.synergies {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min-content, 290px));
+  place-content: center;
+  gap: 3rem;
+}
+.synergy {
+  display: flex;
+
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 1rem;
+  gap: 1rem;
+}
+
+.synergy__price {
+  color: var(--golden);
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+
+  font-weight: bold;
+  text-align: center;
+}
+.synergy__name {
+  font-size: 1.4rem;
+  color: var(--crimson);
+  font-style: italic;
+}

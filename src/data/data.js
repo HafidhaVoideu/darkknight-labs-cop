@@ -1,17 +1,15 @@
-import { RiNftLine } from "react-icons/ri";
-
-import { HiUserGroup } from "react-icons/hi";
-
-import { SiCoinmarketcap } from "react-icons/si";
-
-import { BsCoin } from "react-icons/bs";
+import coin1 from "../assets/icons/icon1.svg";
+import nft from "../assets/icons/icon2.svg";
+import coin2 from "../assets/icons/icon3.svg";
+import market1 from "../assets/icons/icon4.svg";
+import founders from "../assets/icons/icon5.svg";
 
 export const services = [
   {
     id: "serv-1",
-    name: "Nft startegg",
+    name: "Nft startegy",
     des: "We will dive deep into every angle of your project through calls with you and your team and will then determine each and every element to maximize chances of success, both in the short term (initial community building and hype) and in the long term (floor price, community sentiment and strength, etc.)",
-    Icon: RiNftLine,
+    icon: nft,
   },
   {
     id: "serv-2",
@@ -21,7 +19,7 @@ Through Darknight Labs’ Proof-Of-Win-Win Ecosystem, get access to an exclusive
 mastermind constituted of some of the best founders in the Web3 space, where the sole
 purpose is to share and find win-win synergies.
 Mastermind members are mainly constituted of Darknight Labs’ official partners.`,
-    Icon: HiUserGroup,
+    icon: founders,
   },
   {
     id: "serv-3",
@@ -32,7 +30,7 @@ simply do not work.
 And that’s where Darknight Labs can help.
 Once the strategy is nailed down, Darknight Labs will reach out to their very extensive
 portfolio (direct access to 600+ of the most valuable NFT communities in the space)`,
-    Icon: SiCoinmarketcap,
+    icon: market1,
   },
   {
     id: "serv-4",
@@ -41,6 +39,6 @@ portfolio (direct access to 600+ of the most valuable NFT communities in the spa
 Reuters, etc.), high tier token listings (Binance, KuCoin, Coinbase), blockchain partnerships /
 grants (Polygon, Arbitrum, Binance Chain, Venom, etc), high tier launchpads (Polkastarter,
 DAOmaker, etc.), and many more.`,
-    Icon: BsCoin,
+    icon: coin1,
   },
 ];

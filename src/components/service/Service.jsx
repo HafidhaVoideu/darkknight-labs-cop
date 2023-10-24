@@ -1,7 +1,8 @@
 import React from "react";
 import { motion, easeIn } from "framer-motion";
 import "./service.css";
-const Service = ({ name, des, Icon }) => {
+
+const Service = ({ name, des, icon }) => {
   return (
     <motion.article
       initial={{ y: -29, opacity: 0 }}
@@ -16,9 +17,8 @@ const Service = ({ name, des, Icon }) => {
       className={` text-grey  service `}
     >
       <div className="service__info ">
-        <div className="service__icon ">
-          <Icon />
-        </div>
+        <img className="service__icon" src={icon} alt={`${name}-${icon}`} />
+
         <h1 className="service__title 2">{name}</h1>
       </div>
 

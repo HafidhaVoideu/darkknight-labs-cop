@@ -1,0 +1,23 @@
+.popup__delete-btn,
+.popup__edit-btn,
+.popup__close-btn {
+  color: var(--crimson);
+  margin-right: 0.2rem;
+  padding: 0.3em;
+  font-size: 1.3rem;
+}
+.popup__delete-btn:hover,
+.popup__edit-btn:hover {
+  color: crimson;
+  transition: all 0.2s ease-in-out;
+}
+.popup__edit-btn:hover {
+  color: var(--golden);
+}
+
+.popup__close-btn {
+  margin-left: auto;
+}
+.popup__close-btn:hover {
+  color: var(--crimson);
+}

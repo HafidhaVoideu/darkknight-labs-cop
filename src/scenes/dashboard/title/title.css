@@ -1,0 +1,31 @@
+/* ************************   Dashboard Title  ********************************* */
+/* ************************ ************************ ********************  */
+
+.tab {
+  margin-top: 2rem;
+
+  width: 100%;
+  text-align: center;
+}
+.tab__name {
+  color: var(--crimson);
+  font-size: 2.9rem;
+  font-family: "Didact Gothic", sans-serif;
+
+  margin-bottom: 0.5rem;
+}
+
+.tab__subtitle {
+  font-size: 0.9rem;
+}
+@media screen and (min-width: 700px) {
+  .tab {
+    text-align: left;
+  }
+  .tab__name {
+    font-size: 3.1rem;
+  }
+  .tab__subtitle {
+    font-size: 1rem;
+  }
+}

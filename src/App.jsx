@@ -6,9 +6,14 @@ import Services from "./scenes/sections/services/Services";
 import Members from "./scenes/sections/members/Members";
 import Partners from "./scenes/sections/partners/Partners";
 import About from "./scenes/sections/about/About";
-import Footer from "./scenes/global/footer/footer";
+import Footer from "./scenes/global/footer/Footer";
+
+import Dashboard from "./scenes/dashboard/Dashboard";
 
 import { setGlowEffectRx } from "./utils/functions";
+import Popup from "./components/modal/Popup";
+import Alert from "./components/alert/Alert";
+import Homepage from "./scenes/homepage/Homepage";
 
 function App() {
   useEffect(() => {
@@ -17,19 +22,9 @@ function App() {
 
   return (
     <>
-      <Header />
+      {/* <Dashboard /> */}
 
-      <Home />
-
-      <Services />
-
-      <Members />
-
-      <Partners />
-
-      <About />
-
-      <Footer />
+      <Homepage />
     </>
   );
 }

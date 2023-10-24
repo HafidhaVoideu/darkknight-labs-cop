@@ -5,6 +5,7 @@
   --black: #090a0b;
   --crimson: #f5efdb;
   --golden: #dcca87;
+  --grey: #141414;
 }
 
 *,
@@ -306,7 +307,7 @@ img {
 }
 
 .avatar {
-  width: 53%;
+  width: 73%;
   border-radius: 50%;
 }
 

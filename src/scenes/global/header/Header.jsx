@@ -4,8 +4,9 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { HiMenu } from "react-icons/hi";
 import { AiOutlineClose } from "react-icons/ai";
-
 import { TbArrowBigUpFilled } from "react-icons/tb";
+
+import arrow from "../../../assets/frames/arrow.png";
 
 import "./header.css";
 const Header = () => {
@@ -87,9 +88,12 @@ const Header = () => {
       )}
 
       {showTopButton && (
-        <button className="header__scroll-btn" onClick={scrollToTop}>
-          <TbArrowBigUpFilled />
-        </button>
+        <img
+          src={arrow}
+          alt="top-arrow"
+          className="header__scroll-img"
+          onClick={scrollToTop}
+        />
       )}
 
       {/* Desktop nav */}

@@ -8,6 +8,26 @@
   /* "text-left mx-auto w-10/12 text-crimson font-Tparagraph text-md min-[375px]:text-center  sm:text-lg lg:text-xl leading-7 " */
 }
 
+.about__frame {
+  position: relative;
+}
+
+.about__img1,
+.about__img2 {
+  position: absolute;
+  width: 120px;
+}
+.about__img1 {
+  left: -3vw;
+  top: -5vh;
+}
+.about__img2 {
+  position: absolute;
+
+  right: -3vw;
+  bottom: -5vh;
+}
+
 @media screen and (min-width: 300px) {
   .about {
     text-align: center;

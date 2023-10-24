@@ -6,7 +6,7 @@ import brand from "../../assets/brand-logo.png";
 
 import "./partner.css";
 
-const Partner = () => {
+const Partner = ({ name, logo }) => {
   return (
     <motion.article
       initial={{ opacity: 0, y: -22 }}
@@ -15,16 +15,11 @@ const Partner = () => {
         ease: easeInOut,
         delay: 0.1,
       }}
+      className="partner"
     >
-      <div className="partner  shadow">
-        <img
-          src={brand}
-          alt="brand-logo"
-          className="w-[40px] sm:w-[60px] h-auto"
-        />
-      </div>
+      <img src={logo} alt="brand-logo" className="patner__image" />
 
-      <h1 className="partner__title">BItcoin Max</h1>
+      <h1 className="partner__title">{name}</h1>
     </motion.article>
   );
 };

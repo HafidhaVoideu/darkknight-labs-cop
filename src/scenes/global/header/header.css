@@ -104,6 +104,15 @@
   color: var(--golden);
 }
 
+.header__scroll-img {
+  position: fixed;
+  bottom: 2%;
+  right: 1.5%;
+  height: auto;
+  width: 30px;
+  cursor: pointer;
+}
+
 @media screen and (min-width: 1024px) {
   .header {
     padding: 1.9rem 1.5rem;

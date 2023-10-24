@@ -2,6 +2,7 @@ import React from "react";
 import Partner from "../../../components/partner/Partner";
 import Title from "../../../components/Title";
 import "./partners.css";
+import { partners } from "../../../data/partners";
 
 const Partners = () => {
   return (
@@ -10,18 +11,9 @@ const Partners = () => {
 
       <div className="container">
         <section className="  partners  ">
-          <Partner />
-          <Partner />
-          <Partner />
-          <Partner />
-          <Partner />
-          <Partner />
-          <Partner />
-          <Partner />
-          <Partner />
-          <Partner />
-          <Partner />
-          <Partner />
+          {partners.map((p) => (
+            <Partner key={p.id} {...p} />
+          ))}
         </section>
       </div>
     </section>

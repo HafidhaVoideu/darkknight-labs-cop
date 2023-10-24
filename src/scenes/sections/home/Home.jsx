@@ -3,6 +3,8 @@ import { motion } from "framer-motion";
 import logo from "../../../assets/logo.png";
 import { TypingText } from "../../../components/CustomText";
 import { staggerContainer } from "../../../utils/motion";
+
+import frame from "../../../assets/frames/btn.png";
 import "./home.css";
 const Home = () => {
   return (
@@ -16,21 +18,12 @@ const Home = () => {
           <img src={logo} alt="logo" className=" home__img " />
         </motion.div>
 
-        <a href="#" className="home__btn glow-effect">
-          Connect To Discord
-          <svg class="glow-container">
-            <rect
-              pathLength="100"
-              stroke-linecap="round"
-              class="glow-blur"
-            ></rect>
-            <rect
-              pathLength="100"
-              stroke-linecap="round"
-              class="glow-line"
-            ></rect>
-          </svg>
-        </a>
+        <div className="home__img-div">
+          <img src={frame} className="home__frame" alt="button-frame" />
+          <a href="#" className="home__btn">
+            Connect To Discord
+          </a>
+        </div>
 
         <motion.div
           variants={staggerContainer()}

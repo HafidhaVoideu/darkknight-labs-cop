@@ -5,8 +5,9 @@ import { motion, easeIn } from "framer-motion";
 
 import Title from "../../../components/Title";
 
-import profile from "../../../assets/profile.png";
 import { Tilt } from "react-tilt";
+
+import { members } from "../../../data/members";
 
 const container = {
   hidden: { opacity: 0 },
@@ -36,13 +37,13 @@ const defaultOptions = {
   easing: "cubic-bezier(.03,.98,.52,.99)", // Easing on enter/exit.
 };
 
-const Card = () => {
+const Card = ({ name, job, img }) => {
   return (
     <Tilt options={defaultOptions}>
       <motion.article variants={card} className="card ">
         <article className=" card__article   ">
           <div className="avatar glow-effect" data-glow-animation="grow">
-            <img src={profile} alt="profile" />
+            <img src={img} alt="profile" className="card__img" />
             <svg className="glow-container">
               <rect
                 pathLength="100"
@@ -58,8 +59,8 @@ const Card = () => {
           </div>
 
           <div>
-            <h2>Alejandro Navia </h2>
-            <p>Founder NFTnow</p>
+            <h2>{name}</h2>
+            <p>{job}</p>
           </div>
         </article>
       </motion.article>
@@ -80,21 +81,9 @@ const Members = () => {
           className="members "
           viewport={{ once: true }}
         >
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {members.map((m) => (
+            <Card key={m} {...m} />
+          ))}
         </motion.section>
       </section>
     </section>

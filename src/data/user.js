@@ -1,0 +1,55 @@
+import projectCover from "../assets/project-cover.jpg";
+
+export const user = {
+  id: "23232323232eerrr23232",
+  name: "Martin Marxinton",
+  idrkn: "4495",
+  drkn: "777",
+
+  projects: [
+    {
+      id: 1,
+      name: "mom's projects",
+      des: "The cat is a domesticated species of small carnivorous mammal. It is the only domesticated species in the family Felidae and is commonly referred to as the domestic cat or house cat to distinguish it from the wild members of the family.",
+      img: projectCover,
+      role: "Dev",
+      twitter: "www.projectTwitter.com",
+      discord: "www.DiscorVideu.com",
+      website: "www.projectWebsite.com ",
+      partnerships: ["Kinda", "Lupa", "Remingot"],
+    },
+    {
+      id: 2,
+      name: "dad's project",
+      des: "The cat is a domesticated species of small carnivorous mammal. It is the only domesticated species in the family Felidae and is commonly referred to as the domestic cat or house cat to distinguish it from the wild members of the family.",
+      img: projectCover,
+      role: "Dev",
+      twitter: "www.projectTwitter.com",
+      discord: "www.DiscorVideu.com",
+      website: "www.projectWebsite.com ",
+      partnerships: ["Kinda", "Lupa", "Remingot"],
+    },
+    {
+      id: 3,
+      name: "Aunt's project",
+      des: "The cat is a domesticated species of small carnivorous mammal. It is the only domesticated species in the family Felidae and is commonly referred to as the domestic cat or house cat to distinguish it from the wild members of the family.",
+      img: projectCover,
+      role: "Dev",
+      twitter: "www.projectTwitter.com",
+      discord: "www.DiscorVideu.com",
+      website: "www.projectWebsite.com ",
+      partnerships: ["Kinda", "Lupa", "Remingot"],
+    },
+    {
+      id: 4,
+      name: " uncle's projects",
+      des: "The cat is a domesticated species of small carnivorous mammal. It is the only domesticated species in the family Felidae and is commonly referred to as the domestic cat or house cat to distinguish it from the wild members of the family.",
+      img: projectCover,
+      role: "Dev",
+      twitter: "www.projectTwitter.com",
+      discord: "www.DiscorVideu.com",
+      website: "www.projectWebsite.com ",
+      partnerships: ["Kinda", "Lupa", "Remingot"],
+    },
+  ],
+};

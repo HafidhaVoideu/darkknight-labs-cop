@@ -2,10 +2,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 1.6rem;
   gap: 2rem;
   max-width: 470px;
+
   background-color: #171717;
 }
 
@@ -17,11 +18,17 @@
   gap: 0.5rem;
   color: var(--crimson);
   text-align: center;
+  min-height: 114px;
+  padding-top: 1rem;
 }
 
 .service__icon {
-  font-size: 3rem;
+  width: 80px;
+
+  /* height: auto; */
   color: #d3d2cd;
+  filter: invert(99%) sepia(3%) saturate(1543%) hue-rotate(328deg)
+    brightness(99%) contrast(93%);
 
   /* color: #dcca87; */
 }
@@ -35,6 +42,7 @@
   font-size: 1rem;
   line-height: 1.4;
   text-align: center;
+  font-family: "Didact Gothic", sans-serif;
 }
 
 @media screen and (min-width: 600px) {
@@ -56,5 +64,17 @@
 
   .service__icon {
     font-size: 3.5rem;
+    color: var(--crimson);
+  }
+  .service__icon img {
+    height: 60px;
+    width: 60px;
+    stroke: var(--crimson);
+  }
+  .service__icon img {
+    height: 20px;
+    width: 20px;
+    color: green;
+    fill: var(--crimson);
   }
 }
