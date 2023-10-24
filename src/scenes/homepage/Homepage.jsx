@@ -21,7 +21,6 @@ const Homepage = () => {
       <Members />
       <Partners />
       <About />
-      <Footer />
     </>
   );
 };
