@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import "./projects.css";
 
@@ -16,10 +16,16 @@ import { BiSelectMultiple } from "react-icons/bi";
 
 import Project from "./project/Project";
 import { useGlobalContextUser } from "../../../../context/context";
+import FuseProject from "./fuseProject/FuseProject";
 
 const Projects = () => {
+  const { projects, setProjects, setAlert, tab, search } =
+    useGlobalContextUser();
+
+
   const [isAddModal, setIsAddModal] = useState(false);
-  const { projects, setProjects, setAlert } = useGlobalContextUser();
+  const [isFuseModal, setIsFuseModal] = useState(false);
+
   const [selectedProjects, setSelectedProjects] = useState([]);
   const [isSelectAll, setIsSelectAll] = useState(false);
 
@@ -49,38 +55,22 @@ const Projects = () => {
     setIsSelectAll(!isSelectAll);
   };
 
-  const handleFusion = () => {
-    if (!isSelectAll) {
-      if (selectedProjects.length) {
-        const temp = projects.filter(
-          (p) =>
-            !selectedProjects
-              .slice(1, selectedProjects.length)
-              .map((sp) => sp.id)
-              .includes(p.id)
-        );
-
-        setProjects(temp);
-        setSelectedProjects([]);
-        setAlert({
-          isAlert: true,
-          alertMessage: `Projects have been fused with ${
-            selectedProjects.slice(0)[0].name
-          } `,
-        });
-      }
-    } else
-      setAlert({
-        isAlert: true,
-        alertMessage: "Select only the projects you want to fuse !",
-      });
-  };
+  // Add Modal Handles
 
   const closeAddModal = () => {
     setIsAddModal(false);
   };
   const openAddModal = () => {
     setIsAddModal(true);
+  };
+
+  // Fuse Modal Handles
+
+  const closeFuseModal = () => {
+    setIsFuseModal(false);
+  };
+  const openFuseModal = () => {
+    setIsFuseModal(true);
   };
 
   // const [page, setPage] = useState(1);
@@ -94,6 +84,7 @@ const Projects = () => {
       transition={{ duration: 0.6, ease: "easeIn" }}
     >
       {isAddModal && <EditProject closeModal={closeAddModal} />}
+      {isFuseModal && <FuseProject closeModal={closeFuseModal} />}
 
       <div className="dashboard__btns">
         <button className="dashboard__dlt-btn" onClick={() => handleDelete()}>
@@ -102,7 +93,7 @@ const Projects = () => {
         <button onClick={() => openAddModal()} className="dashboard__add-btn">
           <AiOutlineFileAdd />
         </button>
-        <button className="dashboard__edit-btn" onClick={() => handleFusion()}>
+        <button className="dashboard__edit-btn" onClick={() => openFuseModal()}>
           <AiOutlineMergeCells />
         </button>
         <button
@@ -112,21 +103,32 @@ const Projects = () => {
           <BiSelectMultiple />
         </button>
       </div>
+      <section className="projects">
+        {tab === "Projects" &&
+          search &&
+          projects
+            ?.filter((p) => p.name.toLowerCase().includes(search.toLowerCase()))
+            .map((p) => (
+              <Project
+                key={p.id}
+                project={p}
+                setSelectedProjects={setSelectedProjects}
+                selectedProjects={selectedProjects}
+                isSelectAll={isSelectAll}
+              />
+            ))}
 
-      <section className="  projects">
-        {projects?.length === 0 ? (
-          <p className="projects__unavailable">No projects Available</p>
-        ) : (
+        {tab === "Projects" &&
+          !search &&
           projects?.map((p) => (
             <Project
-              key={`${p.id}-pro`}
+              key={p.id}
               project={p}
               setSelectedProjects={setSelectedProjects}
               selectedProjects={selectedProjects}
               isSelectAll={isSelectAll}
             />
-          ))
-        )}
+          ))}
       </section>
     </motion.section>
   );

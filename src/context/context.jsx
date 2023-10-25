@@ -1,18 +1,24 @@
-import React, { useState, useContext } from "react";
-
-export const UserContext = React.createContext();
-
+import React, { useState, useContext, useEffect } from "react";
 import { user as defaultUser } from "../data/user";
 import { projects as defaultProjects } from "../data/projects";
+import { synergies as defaultSynergies } from "../data/synergies";
+
+
+export const UserContext = React.createContext();
 
 const UserContextProvider = ({ children }) => {
   const [user, setUser] = useState(defaultUser);
   const [projects, setProjects] = useState(defaultProjects);
-  const [synergies, setSynergies] = useState();
+  const [synergies, setSynergies] = useState(defaultSynergies);
   const [featuredProjects, setFeaturedProjects] = useState();
   const [role, setRole] = useState("");
-
   const [alert, setAlert] = useState({ isAlert: false, alertMessage: "" });
+  const [search, setSearch] = useState("");
+  const [tab, setTab] = useState("Featured Projects");
+
+  useEffect(() => {
+    setSearch("");
+  }, [tab]);
 
   return (
     <UserContext.Provider
@@ -25,6 +31,14 @@ const UserContextProvider = ({ children }) => {
         setRole,
         alert,
         setAlert,
+        search,
+        setSearch,
+        tab,
+        setTab,
+        synergies,
+        setSynergies,
+        featuredProjects,
+        setFeaturedProjects,
       }}
     >
       {children}

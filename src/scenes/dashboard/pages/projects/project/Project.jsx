@@ -3,9 +3,9 @@ import "./project.css";
 import EditProject from "../editProject/EditProject";
 import Popup from "../../../../../components/modal/Popup";
 import { useGlobalContextUser } from "../../../../../context/context";
-
 import { FiMoreHorizontal } from "react-icons/fi";
 import { BiEdit } from "react-icons/bi";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 
 // todo ****************************************************************
 
@@ -18,8 +18,8 @@ const Project = ({
   const [isEditModal, setIsEditModal] = useState(false);
   const [isMoreModal, setIsMoreModal] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
-  const { name, discord, img, partnerships } = project;
-  const { projects } = useGlobalContextUser();
+  const { id, name, discord, img, website, featured } = project;
+  const { projects, setProjects } = useGlobalContextUser();
 
   const closeEditModal = () => {
     setIsEditModal(false);
@@ -36,6 +36,23 @@ const Project = ({
 
   const handleCheckbox = () => {
     setIsChecked(!isChecked);
+  };
+
+  const addToFeatures = () => {
+    const temp = projects.map((project) => {
+      if (id === project.id) return { ...project, featured: true };
+      else return project;
+    });
+
+    setProjects(temp);
+  };
+
+  const removeFromFeatures = () => {
+    const temp = projects.map((project) => {
+      if (id === project.id) return { ...project, featured: false };
+      else return project;
+    });
+    setProjects(temp);
   };
 
   useEffect(() => {
@@ -75,13 +92,7 @@ const Project = ({
       <img src={img} alt={name} className="project__img" />
       <p className="project__name">{name}</p>
       <p className="project__discord">{discord}</p>
-
-      <p className="project__partnerships">{partnerships}</p>
-      {/* <ul className="project__partnerships">
-        {partnerships?.map((p, index) => (
-          <li key={index} className="project__partnership"></li>
-        ))}
-      </ul> */}
+      <p className="project__discord">{website}</p>
 
       {isMoreModal && (
         <Popup project={project} closeModal={closeMoreModal} icons={false} />
@@ -97,6 +108,15 @@ const Project = ({
         <button className="project__btn " onClick={() => openMoreModal()}>
           <FiMoreHorizontal />
         </button>
+        {featured ? (
+          <button className="project__btn heart " onClick={removeFromFeatures}>
+            <AiFillHeart />
+          </button>
+        ) : (
+          <button className="project__btn heart " onClick={addToFeatures}>
+            <AiOutlineHeart />
+          </button>
+        )}
       </div>
     </article>
   );

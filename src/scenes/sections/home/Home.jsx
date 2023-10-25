@@ -3,10 +3,12 @@ import { motion } from "framer-motion";
 import logo from "../../../assets/logo.png";
 import { TypingText } from "../../../components/CustomText";
 import { staggerContainer } from "../../../utils/motion";
-
+import { useNavigate } from "react-router-dom";
 import frame from "../../../assets/frames/btn.png";
 import "./home.css";
+
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <section id="home" className="home">
       <div className="home__div">
@@ -18,11 +20,9 @@ const Home = () => {
           <img src={logo} alt="logo" className=" home__img " />
         </motion.div>
 
-        <div className="home__img-div">
+        <div className="home__img-div" onClick={() => navigate("/dashboard")}>
           <img src={frame} className="home__frame" alt="button-frame" />
-          <a href="#" className="home__btn">
-            Connect To Discord
-          </a>
+          <a className="home__btn">Connect To Discord</a>
         </div>
 
         <motion.div

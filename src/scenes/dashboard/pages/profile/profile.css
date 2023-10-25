@@ -1,12 +1,11 @@
 .profile__projects {
   display: grid;
   margin: 3rem auto;
-  grid-template-columns: repeat(auto-fit, minmax(min-content, 290px));
+  grid-template-columns: repeat(auto-fit, minmax(min-content, 340px));
   place-items: center;
 
   justify-content: center;
   gap: 2rem;
-  row-gap: 2rem;
 }
 
 .profile__info {
@@ -34,7 +33,8 @@
 }
 @media screen and (min-width: 1200px) {
   .profile__projects {
-    justify-content: space-between;
+    justify-content: flex-start;
+    /* column-gap: 4rem; */
   }
 }
 

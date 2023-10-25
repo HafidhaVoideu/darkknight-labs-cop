@@ -27,6 +27,9 @@
   margin-left: 0.6rem;
 }
 
+.heart {
+  color: crimson;
+}
 .project__btns {
   align-self: flex-end;
   margin-top: 2rem;
@@ -89,7 +92,7 @@
     position: unset;
     display: grid;
     padding: 0 1rem;
-    grid-template-columns: 50px repeat(4, 1fr) 100px;
+    grid-template-columns: 50px repeat(4, 1fr) 160px;
     grid-auto-rows: 100px;
     place-items: center;
     text-align: center;

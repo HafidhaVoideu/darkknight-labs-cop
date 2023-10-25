@@ -80,7 +80,7 @@ const Members = () => {
           viewport={{ once: true }}
         >
           {members.map((m) => (
-            <Card key={m} {...m} />
+            <Card key={m.id} {...m} />
           ))}
         </motion.section>
       </section>

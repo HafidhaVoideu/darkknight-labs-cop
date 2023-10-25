@@ -1,15 +1,12 @@
-import React from "react";
-import Synergy from "./Synergy";
+import React, { useEffect, useState } from "react";
+import { synergies } from "../../../../../../data/synergies";
 import { AiOutlineDelete, AiOutlineFileAdd } from "react-icons/ai";
 import { FiEdit } from "react-icons/fi";
 import { motion } from "framer-motion";
 
-import "./synergies.css";
-import { useGlobalContextUser } from "../../../../context/context";
+import ValidatedSyn from "../validatedSynergy/ValidatedSyn";
 
-const Synergies = () => {
-  const { search, tab, synergies } = useGlobalContextUser();
-
+const ValidatedSynergies = () => {
   return (
     <motion.section
       initial={{ opacity: 0, y: -24 }}
@@ -29,18 +26,12 @@ const Synergies = () => {
         </button>
       </div>
       <section className="synergies">
-        {tab === "Synergies" &&
-          search &&
-          synergies
-            .filter((p) => p.name.toLowerCase().includes(search.toLowerCase()))
-            .map((syn) => <Synergy key={syn.id} syn={syn} />)}
-
-        {tab === "Synergies" &&
-          !search &&
-          synergies?.map((syn) => <Synergy key={syn.id} syn={syn} />)}
+        {synergies.map((syn) => (
+          <ValidatedSyn key={syn.id} syn={syn} />
+        ))}
       </section>
     </motion.section>
   );
 };
 
-export default Synergies;
+export default ValidatedSynergies;

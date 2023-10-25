@@ -18,7 +18,6 @@ const EditProject = ({ project, closeModal }) => {
     name: Yup.string().required("required"),
     des: Yup.string().required("required"),
     image: Yup.string().required("required"),
-    partnerships: Yup.string().required("required"),
     discord: Yup.string()
       .matches(
         /((https?):\/\/)?(www.)?[a-z0-9]+(\.[a-z]{2,}){1,3}(#?\/?[a-zA-Z0-9#]+)*\/?(\?[a-zA-Z0-9-_]+=[a-zA-Z0-9-%]+&?)?$/,
@@ -43,7 +42,6 @@ const EditProject = ({ project, closeModal }) => {
     discord: project?.discord || "",
     website: project?.website || "",
     twitter: project?.twitter || "",
-    partnerships: project?.partnerships || "",
   };
 
   // ****************** Edit *****************************
@@ -62,7 +60,6 @@ const EditProject = ({ project, closeModal }) => {
           img: image,
           website,
           twitter,
-          partnerships,
           id: project.id,
         };
       else return p;
@@ -162,24 +159,6 @@ const EditProject = ({ project, closeModal }) => {
                   </label>
                   <Field type="text" className="edit__input" name="image" />
                   <ErrorMessage name="image">
-                    {(errMessage) => (
-                      <p className="edit__error">*{errMessage}</p>
-                    )}
-                  </ErrorMessage>
-                </div>
-
-                {/* partnerships */}
-
-                <div className="edit__div">
-                  <label htmlFor="partnerships" className="edit__label">
-                    partnerships
-                  </label>
-                  <Field
-                    type="text"
-                    className="edit__input"
-                    name="partnerships"
-                  />
-                  <ErrorMessage name="partnerships">
                     {(errMessage) => (
                       <p className="edit__error">*{errMessage}</p>
                     )}

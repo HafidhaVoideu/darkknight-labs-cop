@@ -7,22 +7,15 @@ import { FaXTwitter } from "react-icons/fa6";
 import { AiOutlineClose } from "react-icons/ai";
 import { FiMenu } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
-
+import { useGlobalContextUser } from "../../../context/context";
 import "./sidebar.css";
 
-const Sidebar = ({ tab, setTab }) => {
+import { links } from "../../../constants/const";
+const Sidebar = () => {
   const [open, cycleOpen] = useCycle(false, true);
-
   const navigate = useNavigate();
+  const { setTab, user } = useGlobalContextUser();
 
-  const links = [
-    { name: " My Projects", to: "/myprojects", id: 1 },
-    { name: "Projects", to: "/projects", id: 2 },
-    { name: "Synergies", to: "/synergies", id: 3 },
-    { name: "Ruffles", to: "#", id: 4 },
-    { name: "Auctions", to: "#", id: 5 },
-    { name: "FAQ", to: "#", id: 6 },
-  ];
   const itemVariants = {
     closed: {
       opacity: 0,
@@ -66,8 +59,8 @@ const Sidebar = ({ tab, setTab }) => {
               />
 
               <div className="dashboard-aside__user">
-                <p>Super Marxist</p>
-                <p>(user)</p>
+                <p>{user.name}</p>
+                <p>({user.role})</p>
               </div>
 
               <div className="dashboard-aside__wallet">
@@ -98,7 +91,6 @@ const Sidebar = ({ tab, setTab }) => {
               {links.map(({ name, to, id }) => (
                 <motion.a
                   key={id}
-                  href="#"
                   whileHover={{ scale: 1.1 }}
                   variants={itemVariants}
                   onClick={() => {
@@ -109,7 +101,6 @@ const Sidebar = ({ tab, setTab }) => {
                   {name}
                 </motion.a>
               ))}
-
               <div className="dashboard-aside__socials">
                 <a href="#">
                   <FaXTwitter />

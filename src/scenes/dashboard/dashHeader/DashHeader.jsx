@@ -2,9 +2,23 @@ import React, { useState } from "react";
 import logo from "../../../assets/logo.png";
 import { FiSearch } from "react-icons/fi";
 import "./dashHeader.css";
+import { useGlobalContextUser } from "../../../context/context";
 
 const DashHeader = () => {
-  const [search, setSearch] = useState("");
+  const { search, setSearch, tab } = useGlobalContextUser();
+
+  let placeholder;
+
+  switch (tab) {
+    case "Projects":
+    case "Featured Projects":
+    case "My Projects":
+      placeholder = "search project name";
+      break;
+    case "Synergies":
+      placeholder = "search synergy";
+      break;
+  }
 
   return (
     <header className="dashboard-header">
@@ -16,7 +30,7 @@ const DashHeader = () => {
           name="search project"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          placeholder="search"
+          placeholder={placeholder}
         />
       </div>
 

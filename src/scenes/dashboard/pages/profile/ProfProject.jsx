@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { BsPerson } from "react-icons/bs";
 import Popup from "../../../../components/modal/Popup";
 
-const ProfProject = ({ project }) => {
+const ProfProject = ({ project, icons = true }) => {
   const [isModal, setIsModal] = useState(false);
   const [modalContent, setModalContent] = useState(null);
+  const { id, name, des, img, roles, partnerships } = project;
 
-  const { id, name, des, img, role, partnerships } = project;
   const openModal = () => {
     setIsModal(true);
   };
@@ -20,35 +20,30 @@ const ProfProject = ({ project }) => {
 
   return (
     <>
-      {isModal && <Popup closeModal={closeModal} project={project} />}
+      {isModal && (
+        <Popup closeModal={closeModal} project={project} icons={icons} />
+      )}
       <article className="profile__project dropshadow" onClick={handleClick}>
         <img src={img} alt="project-cover" className="profile__project__img" />
         <div className="profile__project__info">
-          <h1 className="proflie__project__name">{name}</h1>
-
-          {role && (
-            <div className="profile__project__role">
-              <button>
+          <h1 className="profile__project__name">{name}</h1>
+          {roles && (
+            <ul className="profile__project__role  separator ">
+              <li>
                 <BsPerson />
-              </button>
-              <span>{role}</span>
-            </div>
-          )}
-
-          <p className="profile__project__des">{des}</p>
-
-          <p className="profile__project__partnerships">
-            {" "}
-            <span> partnership: </span> {partnerships}{" "}
-          </p>
-          {/* <div className="profile__project__partnerships">
-            <ul>
-              <li>Partnerships:</li>
-              {partnerships.split(",").map((p, index) => (
-                <li key={`${p}-${index}`}>{p}</li>
+              </li>
+              {roles?.map((r) => (
+                <li key={r.id}>{r.label}</li>
               ))}
             </ul>
-          </div> */}
+          )}
+          <p className="profile__project__des">{des}</p>
+          <ul className="profile__project__partnerships separator">
+            <li>Partnerships:</li>
+            {partnerships?.map((p) => (
+              <li key={p.id}>{p.label}</li>
+            ))}
+          </ul>
         </div>
       </article>
     </>

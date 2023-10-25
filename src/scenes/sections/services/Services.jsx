@@ -2,7 +2,7 @@ import React from "react";
 import Service from "../../../components/service/Service";
 import { motion } from "framer-motion";
 import Title from "../../../components/Title";
-import { services } from "../../../data/data";
+import { services } from "../../../data/services";
 
 import "./services.css";
 

@@ -5,7 +5,7 @@ import { useGlobalContextUser } from "../../../../context/context";
 import { motion } from "framer-motion";
 
 const Profile = () => {
-  const { user, setUser } = useGlobalContextUser();
+  const { user, tab, search } = useGlobalContextUser();
 
   return (
     <motion.section
@@ -15,9 +15,19 @@ const Profile = () => {
       transition={{ duration: 0.6, ease: "easeIn" }}
     >
       <section className="profile__projects">
-        {user?.projects.map((project) => (
-          <ProfProject key={project.id} project={project} />
-        ))}
+        {tab === "My Projects" &&
+          search &&
+          user.projects
+            .filter((p) => p.name.toLowerCase().includes(search.toLowerCase()))
+            .map((project) => (
+              <ProfProject key={project.id} project={project} icons={true} />
+            ))}
+
+        {tab === "My Projects" &&
+          !search &&
+          user.projects?.map((project) => (
+            <ProfProject key={project.id} project={project} icons={true} />
+          ))}
       </section>
     </motion.section>
   );
