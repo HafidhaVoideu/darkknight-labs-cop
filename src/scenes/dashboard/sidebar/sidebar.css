@@ -16,7 +16,7 @@
 
 .dashboard-aside__user {
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
 }
 .dashboard-aside__user > p:first-child {
   color: var(--golden);
@@ -47,11 +47,12 @@
 }
 
 .dashboard-aside__img {
-  width: 90px;
-  height: 90px;
+  width: 80px;
+  height: 80px;
 }
 
 .dashboard-aside__wallet {
+  margin-top: 1rem;
   background-color: rgb(26, 26, 26);
   padding: 1rem;
 }
@@ -77,7 +78,7 @@
 .dashboard-aside__list a {
   color: #f9fafb;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1.07rem;
   font-weight: 600;
   display: block;
 }

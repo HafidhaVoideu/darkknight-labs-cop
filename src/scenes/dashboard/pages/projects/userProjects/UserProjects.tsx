@@ -4,7 +4,7 @@ import ProfProject from "../../profile/ProfProject";
 import { useGlobalContextUser } from "../../../../../context/context";
 
 const UserProjects = () => {
-  const { projects, setProjects } = useGlobalContextUser();
+  const { projects, tab, search } = useGlobalContextUser();
 
   return (
     <motion.section
@@ -14,9 +14,19 @@ const UserProjects = () => {
       transition={{ duration: 0.6, ease: "easeIn" }}
     >
       <section className="profile__projects">
-        {projects?.map((project) => (
-          <ProfProject key={project.id} project={project} icons={false} />
-        ))}
+        {tab === "Projects" &&
+          search &&
+          projects
+            ?.filter((p) => p.name.toLowerCase().includes(search.toLowerCase()))
+            .map((project) => (
+              <ProfProject key={project.id} project={project} icons={false} />
+            ))}
+
+        {tab === "Projects" &&
+          !search &&
+          projects?.map((project) => (
+            <ProfProject key={project.id} project={project} icons={false} />
+          ))}
       </section>
     </motion.section>
   );

@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 
 import "./projects.css";
-
-import Pagination from "../../../../components/pagination/Pagination";
 import { motion } from "framer-motion";
 import EditProject from "./editProject/EditProject";
 
@@ -21,7 +19,6 @@ import FuseProject from "./fuseProject/FuseProject";
 const Projects = () => {
   const { projects, setProjects, setAlert, tab, search } =
     useGlobalContextUser();
-
 
   const [isAddModal, setIsAddModal] = useState(false);
   const [isFuseModal, setIsFuseModal] = useState(false);

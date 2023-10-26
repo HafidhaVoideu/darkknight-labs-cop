@@ -8,7 +8,7 @@ const Synergy = ({ syn }) => {
 
       <div className="synergy__info">
         <h1 className="synergy__name">{name}</h1>
-        <p className="synergy__price">{price}</p>
+        <p className="synergy__price">{price} Idrkn </p>
       </div>
     </article>
   );

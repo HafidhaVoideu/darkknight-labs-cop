@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BsPerson } from "react-icons/bs";
 import Popup from "../../../../components/modal/Popup";
 
@@ -18,6 +18,10 @@ const ProfProject = ({ project, icons = true }) => {
     setModalContent(project);
   };
 
+  useEffect(() => {
+    const body = document.querySelector("body");
+    body.style.overflow = isModal ? "hidden" : "auto";
+  }, [isModal]);
   return (
     <>
       {isModal && (
@@ -38,12 +42,15 @@ const ProfProject = ({ project, icons = true }) => {
             </ul>
           )}
           <p className="profile__project__des">{des}</p>
-          <ul className="profile__project__partnerships separator">
-            <li>Partnerships:</li>
-            {partnerships?.map((p) => (
-              <li key={p.id}>{p.label}</li>
-            ))}
-          </ul>
+
+          {partnerships && (
+            <ul className="profile__project__partnerships separator">
+              <li>Partnerships:</li>
+              {partnerships.map((p) => (
+                <li key={p.id}>{p.label}</li>
+              ))}
+            </ul>
+          )}
         </div>
       </article>
     </>

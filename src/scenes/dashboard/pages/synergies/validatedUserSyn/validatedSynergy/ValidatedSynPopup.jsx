@@ -1,37 +1,70 @@
 import React, { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import CreatableSelect from "react-select/creatable";
+import { v4 as uuidV4 } from "uuid";
+import Select from "react-select";
+
 import { useGlobalContextUser } from "../../../../../../context/context";
 
 const ValidatedSynPopup = ({ validatedSyn, closeModal }) => {
-  const { projects } = useGlobalContextUser();
+  const { projects, user } = useGlobalContextUser();
+
   const [page, setPage] = useState(0);
+
+  const [select, setSelect] = useState();
+  const [multipleSelect, setMultipleSelect] = useState([]);
 
   const handleBtn = () => {
     setPage((prev) => (prev = prev + 1));
   };
 
-  const options = [
-    { value: "question1", label: "question 1" },
-    { value: "question2", label: "question 2" },
-    { value: "question3", label: "question 3" },
-    { value: "question4", label: "question 4" },
-    { value: "question5", label: "question 5" },
+  const partnerships = [
+    {
+      value: "question1",
+      label:
+        "Getting whitelist spots from great Web3 projects for my community",
+    },
+    {
+      value: "question2",
+      label:
+        "Giving whitelists spots to our community for your upcoming project",
+    },
+    {
+      value: "question3",
+      label: "Hosting AMAs with high tier projects",
+    },
+    {
+      value: "question4",
+      label:
+        "Getting whitelists spots from great Web3 projects for my community",
+    },
+    {
+      value: "question5",
+      label:
+        "Integrating branded game assets from other Web3 brands in our project for cross-pollination of audiences",
+    },
+    {
+      value: "question6",
+      label:
+        " Integrating your own branded assets in some high quality Web3 games for cross-pollination of audiences and adding utility for your project / community",
+    },
+    {
+      value: "question7",
+      label:
+        "Getting early alpha to write threads / (be the first to) alpha call",
+    },
+    {
+      value: "question8",
+      label: " Sharing early alpha and getting some eyeballs on it",
+    },
   ];
-  const options2 = [
-    { value: "project1", label: "project 1" },
-    { value: "project2", label: "project 2" },
-    { value: "project3", label: "project 3" },
-    { value: "project4", label: "project 4" },
-    { value: "project5", label: "project 5" },
-  ];
-  const options3 = [
-    { value: "role1", label: "role 1" },
-    { value: "role2", label: "role 2" },
-    { value: "role3", label: "role 3" },
-    { value: "role4", label: "role 4" },
-    { value: "role5", label: "role 5" },
-  ];
+  const myprojects = user.projects.map((p) => {
+    return { value: p.id, label: p.name };
+  });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
   return (
     <div id="myModal" className="modal  ">
@@ -57,26 +90,40 @@ const ValidatedSynPopup = ({ validatedSyn, closeModal }) => {
 
         {page === 1 && (
           <article className="vsyn__page ">
-            <img className="vsyn__popup__img" src={validatedSyn.img} />
+            <img className="vsyn__page__img" src={validatedSyn.img} />
 
-            <h1 className="vsyn__page__name">Partnerships</h1>
+            <form onSubmit={handleSubmit} className="vsyn__page__form">
+              <label htmlFor="vsyn-cselect">Partnerships</label>
+              <CreatableSelect
+                id="vsyn-cselect"
+                className="vsyn__page__cselec"
+                isMulti
+                value={multipleSelect}
+                onChange={(choice) => setMultipleSelect(choice)}
+                onCreateOption={(label) => {
+                  const partnership = { id: uuidV4(), label };
+                  setSelectedTags((prev) => [...prev, newTag]);
+                }}
+                isClearable={false}
+                isSearchable
+                options={partnerships}
+              />
 
-            <CreatableSelect
-              className="popup-select"
-              isMulti
-              isClearable
-              options={options}
-            />
-            <h1 className="vsyn__page__name">Projects</h1>
-
-            <Select
-              className="popup-select"
-              isMulti
-              isClearable
-              options={options2}
-            />
-
-            <button className="vsyn__page__btn"> Validate </button>
+              <label htmlFor="vsyn-cselect">Projects</label>
+              <Select
+                id="vsyn-cselect"
+                className="vsyn__page__select"
+                value={select}
+                onChange={(choice) => setSelect(choice)}
+                isMulti
+                isClearable={false}
+                isSearchable
+                options={myprojects}
+              />
+              <button type="submit" className="vsyn__page__btn">
+                Validate{" "}
+              </button>
+            </form>
           </article>
         )}
       </div>

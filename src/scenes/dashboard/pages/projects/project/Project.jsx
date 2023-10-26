@@ -21,6 +21,11 @@ const Project = ({
   const { id, name, discord, img, website, featured } = project;
   const { projects, setProjects } = useGlobalContextUser();
 
+  useEffect(() => {
+    const body = document.querySelector("body");
+    body.style.overflow = isMoreModal || isEditModal ? "hidden" : "auto";
+  }, [isEditModal, isMoreModal]);
+
   const closeEditModal = () => {
     setIsEditModal(false);
   };

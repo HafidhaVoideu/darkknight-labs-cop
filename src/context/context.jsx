@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import { user as defaultUser } from "../data/user";
 import { projects as defaultProjects } from "../data/projects";
 import { synergies as defaultSynergies } from "../data/synergies";
-
+import { pendingSynergies as defaultPendingSynergies } from "../data/pendingSynergies";
 
 export const UserContext = React.createContext();
 
@@ -10,6 +10,9 @@ const UserContextProvider = ({ children }) => {
   const [user, setUser] = useState(defaultUser);
   const [projects, setProjects] = useState(defaultProjects);
   const [synergies, setSynergies] = useState(defaultSynergies);
+  const [pendingSynergies, setPendingSynergies] = useState(
+    defaultPendingSynergies
+  );
   const [featuredProjects, setFeaturedProjects] = useState();
   const [role, setRole] = useState("");
   const [alert, setAlert] = useState({ isAlert: false, alertMessage: "" });
@@ -39,6 +42,8 @@ const UserContextProvider = ({ children }) => {
         setSynergies,
         featuredProjects,
         setFeaturedProjects,
+        pendingSynergies,
+        setPendingSynergies,
       }}
     >
       {children}

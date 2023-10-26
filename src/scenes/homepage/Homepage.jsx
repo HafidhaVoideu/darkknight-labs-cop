@@ -1,7 +1,5 @@
 import React from "react";
-
 import Header from "../global/header/Header";
-
 import Home from "../sections/home/Home";
 import Services from "../sections/services/Services";
 import Members from "../sections/members/Members";

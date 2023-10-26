@@ -4,7 +4,6 @@ import DashHeader from "./dashHeader/DashHeader";
 import TabTitle from "./title/TabTitle";
 import Sidebar from "./sidebar/Sidebar";
 import Alert from "../../components/alert/Alert";
-import Profile from "./pages/profile/Profile";
 
 import "./dashboard.css";
 

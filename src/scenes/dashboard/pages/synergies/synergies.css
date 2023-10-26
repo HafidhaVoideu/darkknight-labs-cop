@@ -1,8 +1,9 @@
 .synergies {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min-content, 290px));
-  place-content: center;
+  place-content: start;
   gap: 3rem;
+  margin-top: 2rem;
 }
 .synergy {
   display: flex;
@@ -26,4 +27,8 @@
   font-size: 1.4rem;
   color: var(--crimson);
   font-style: italic;
+}
+.synergy__img {
+  width: 100%;
+  max-height: 200px;
 }

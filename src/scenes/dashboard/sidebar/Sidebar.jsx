@@ -88,19 +88,39 @@ const Sidebar = () => {
               exit="closed"
               variants={sideVariants}
             >
-              {links.map(({ name, to, id }) => (
-                <motion.a
-                  key={id}
-                  whileHover={{ scale: 1.1 }}
-                  variants={itemVariants}
-                  onClick={() => {
-                    setTab(name);
-                    navigate(to);
-                  }}
-                >
-                  {name}
-                </motion.a>
-              ))}
+              {links.map(({ name, to, id }) => {
+                if (user.role === "admin" && name === "My Projects") return;
+                if (
+                  (user.role === "user" || user.role === "validUser") &&
+                  name === "Pending Synergies"
+                )
+                  return;
+                if (name === "Auctions" || name === "Ruffles")
+                  return (
+                    <motion.a
+                      key={id}
+                      whileHover={{ scale: 1.1 }}
+                      variants={itemVariants}
+                      style={{ color: "grey" }}
+                    >
+                      {name}
+                    </motion.a>
+                  );
+
+                return (
+                  <motion.a
+                    key={id}
+                    whileHover={{ scale: 1.1 }}
+                    variants={itemVariants}
+                    onClick={() => {
+                      setTab(name);
+                      navigate(to);
+                    }}
+                  >
+                    {name}
+                  </motion.a>
+                );
+              })}
               <div className="dashboard-aside__socials">
                 <a href="#">
                   <FaXTwitter />

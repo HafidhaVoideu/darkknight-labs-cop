@@ -16,6 +16,7 @@ const DashHeader = () => {
       placeholder = "search project name";
       break;
     case "Synergies":
+    case "Pending Synergies":
       placeholder = "search synergy";
       break;
   }

@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./popup.css";
-import { BiLogoDiscord } from "react-icons/bi";
+import { BiLogoDiscord, BiEdit } from "react-icons/bi";
 import { FaXTwitter } from "react-icons/fa6";
 import { BsGlobe, BsPerson } from "react-icons/bs";
-
 import { AiFillDelete, AiOutlineClose } from "react-icons/ai";
-import { BiEdit } from "react-icons/bi";
 import { useGlobalContextUser } from "../../context/context";
 import Select from "react-select";
 

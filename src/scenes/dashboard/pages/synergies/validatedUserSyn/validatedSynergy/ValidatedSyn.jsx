@@ -11,7 +11,6 @@ const ValidatedSyn = ({ syn }) => {
   };
   const openModal = () => {
     setIsModal(true);
-    console.log("hello world");
   };
 
   return (
@@ -19,12 +18,12 @@ const ValidatedSyn = ({ syn }) => {
       {isModal && (
         <ValidatedSynPopup closeModal={closeModal} validatedSyn={syn} />
       )}
-      <article className="synergy dropshadow" onClick={openModal}>
+      <article className="synergy   vsyn  dropshadow" onClick={openModal}>
         <img src={img} alt={name} className="synergy__img" />
 
         <div className="synergy__info">
           <h1 className="synergy__name">{name}</h1>
-          <p className="synergy__price">{price}</p>
+          <p className="synergy__price">{price} Idkn</p>
         </div>
       </article>
     </>
