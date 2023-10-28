@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import Synergy from "./Synergy";
 import {
   AiOutlineDelete,
@@ -15,13 +15,26 @@ import { useGlobalContextUser } from "../../../../context/context";
 import EditSyngergy from "./adminSynergies/EditSyngergy";
 import AddSynergy from "./adminSynergies/AddSynergy";
 import DeleteSynergy from "./adminSynergies/DeleteSynergy";
-
+import Pagination from "../../../../components/pagination/Pagination";
+import { maxItems } from "../../../../constants/const";
+import FilteredSynergies from "./FilteredSynergies";
 const Synergies = () => {
   const { search, tab, synergies, user } = useGlobalContextUser();
   const [operation, setOperation] = useState("");
-
   const [isModal, setIsModal] = useState(false);
-  // console.log("ssynergies", sy)
+  const [filteredSyn, setFilteredSyn] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const currentTableData = useMemo(() => {
+    const firstPageIndex = (currentPage - 1) * maxItems;
+    const lastPageIndex = firstPageIndex + maxItems;
+    return synergies.slice(firstPageIndex, lastPageIndex);
+  }, [currentPage, synergies]);
+
+  useEffect(() => {
+    const body = document.querySelector("body");
+    body.style.overflow = isModal ? "hidden" : "auto";
+  }, [isModal]);
 
   return (
     <motion.section
@@ -30,37 +43,41 @@ const Synergies = () => {
       className="dashboard-sec "
       transition={{ duration: 0.6, ease: "easeIn" }}
     >
-      {user.role === "admin" && (
-        <div className="dashboard__btns">
-          {/* if role === admin */}
-
-          <button
-            className="dashboard__add-btn"
-            onClick={() => {
-              setOperation("add");
-              setIsModal("true");
-            }}
-          >
-            <AiOutlineFileAdd />
-          </button>
-          <button className="dashboard__edit-btn">
-            <FiEdit
+      <div className="dashboard__options">
+        <FilteredSynergies
+          setFilteredSyn={setFilteredSyn}
+          synergies={synergies}
+        />
+        {user.role === "admin" && (
+          <div className="dashboard__btns">
+            <button
+              className="dashboard__add-btn"
               onClick={() => {
-                setIsModal("true");
-                setOperation("edit");
-              }}
-            />
-          </button>
-          <button className="dashboard__dlt-btn">
-            <AiOutlineDelete
-              onClick={() => {
-                setOperation("dlt");
+                setOperation("add");
                 setIsModal("true");
               }}
-            />
-          </button>
-        </div>
-      )}
+            >
+              <AiOutlineFileAdd />
+            </button>
+            <button className="dashboard__edit-btn">
+              <FiEdit
+                onClick={() => {
+                  setIsModal("true");
+                  setOperation("edit");
+                }}
+              />
+            </button>
+            <button className="dashboard__dlt-btn">
+              <AiOutlineDelete
+                onClick={() => {
+                  setOperation("dlt");
+                  setIsModal("true");
+                }}
+              />
+            </button>
+          </div>
+        )}
+      </div>
 
       {isModal && (
         <div className="modal  ">
@@ -83,16 +100,27 @@ const Synergies = () => {
 
       {/* *********************** admin ****************** */}
       <section className="synergies">
+        {filteredSyn.length !== 0 &&
+          !search &&
+          filteredSyn?.map((syn) => <Synergy key={syn.id} syn={syn} />)}
+
         {tab === "Synergies" &&
           search &&
           synergies
             .filter((p) => p.name.toLowerCase().includes(search.toLowerCase()))
             .map((syn) => <Synergy key={syn.id} syn={syn} />)}
-
         {tab === "Synergies" &&
           !search &&
-          synergies?.map((syn) => <Synergy key={syn.id} syn={syn} />)}
+          !filteredSyn.length &&
+          currentTableData?.map((syn) => <Synergy key={syn.id} syn={syn} />)}
       </section>
+
+      <Pagination
+        currentPage={currentPage}
+        totalCount={search && tab === "Projects" ? 0 : synergies.length}
+        pageSize={maxItems}
+        onPageChange={(page) => setCurrentPage(page)}
+      />
     </motion.section>
   );
 };

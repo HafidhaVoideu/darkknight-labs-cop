@@ -22,12 +22,13 @@ const ProfProject = ({ project, icons = true }) => {
     const body = document.querySelector("body");
     body.style.overflow = isModal ? "hidden" : "auto";
   }, [isModal]);
+
   return (
     <>
       {isModal && (
         <Popup closeModal={closeModal} project={project} icons={icons} />
       )}
-      <article className="profile__project dropshadow" onClick={handleClick}>
+      <article className="profile__project " onClick={handleClick}>
         <img src={img} alt="project-cover" className="profile__project__img" />
         <div className="profile__project__info">
           <h1 className="profile__project__name">{name}</h1>

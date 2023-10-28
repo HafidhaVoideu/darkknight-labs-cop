@@ -1,5 +1,4 @@
 import { useMemo } from "react";
-import React from "react";
 
 const range = (start, end) => {
   let length = end - start + 1;
@@ -11,7 +10,7 @@ const DOTS = "...";
 export const usePagination = ({
   totalCount,
   pageSize,
-  siblingCount = 1,
+  siblingCount = 2,
   currentPage,
 }) => {
   const paginationRange = useMemo(() => {

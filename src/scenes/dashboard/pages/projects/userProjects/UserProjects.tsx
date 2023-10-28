@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import ProfProject from "../../profile/ProfProject";
 import { useGlobalContextUser } from "../../../../../context/context";
-
+import Pagination from "../../../../../components/pagination/Pagination";
+import { maxItems } from "../../../../../constants/const";
 const UserProjects = () => {
   const { projects, tab, search } = useGlobalContextUser();
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const currentTableData = useMemo(() => {
+    const firstPageIndex = (currentPage - 1) * maxItems;
+    const lastPageIndex = firstPageIndex + maxItems;
+    return projects.slice(firstPageIndex, lastPageIndex);
+  }, [currentPage, projects]);
 
   return (
     <motion.section
@@ -24,10 +32,16 @@ const UserProjects = () => {
 
         {tab === "Projects" &&
           !search &&
-          projects?.map((project) => (
+          currentTableData?.map((project) => (
             <ProfProject key={project.id} project={project} icons={false} />
           ))}
       </section>
+      <Pagination
+        currentPage={currentPage}
+        totalCount={search && tab === "Projects" ? 0 : projects.length}
+        pageSize={maxItems}
+        onPageChange={(page) => setCurrentPage(page)}
+      />
     </motion.section>
   );
 };

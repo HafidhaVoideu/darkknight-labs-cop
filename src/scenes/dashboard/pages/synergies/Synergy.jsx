@@ -1,9 +1,9 @@
 import React from "react";
 const Synergy = ({ syn }) => {
-  const { id, img, name, price } = syn;
+  const { img, name, price } = syn;
 
   return (
-    <article className="synergy dropshadow">
+    <article className="synergy">
       <img src={img} alt={name} className="synergy__img" />
 
       <div className="synergy__info">

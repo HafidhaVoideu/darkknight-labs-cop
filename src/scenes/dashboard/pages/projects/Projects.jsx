@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 
 import "./projects.css";
 import { motion } from "framer-motion";
@@ -16,15 +16,30 @@ import Project from "./project/Project";
 import { useGlobalContextUser } from "../../../../context/context";
 import FuseProject from "./fuseProject/FuseProject";
 
+import { maxItems } from "../../../../constants/const";
+import Pagination from "../../../../components/pagination/Pagination";
+
 const Projects = () => {
   const { projects, setProjects, setAlert, tab, search } =
     useGlobalContextUser();
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const currentTableData = useMemo(() => {
+    const firstPageIndex = (currentPage - 1) * maxItems;
+    const lastPageIndex = firstPageIndex + maxItems;
+    return projects.slice(firstPageIndex, lastPageIndex);
+  }, [currentPage, projects]);
 
   const [isAddModal, setIsAddModal] = useState(false);
   const [isFuseModal, setIsFuseModal] = useState(false);
 
   const [selectedProjects, setSelectedProjects] = useState([]);
   const [isSelectAll, setIsSelectAll] = useState(false);
+
+  useEffect(() => {
+    const body = document.querySelector("body");
+    body.style.overflow = isAddModal || isFuseModal ? "hidden" : "auto";
+  }, [isAddModal, isFuseModal]);
 
   const handleDelete = () => {
     if (selectedProjects.length) {
@@ -70,9 +85,6 @@ const Projects = () => {
     setIsFuseModal(true);
   };
 
-  // const [page, setPage] = useState(1);
-
-  // const maxProjects = 6;
   return (
     <motion.section
       initial={{ opacity: 0, y: -24 }}
@@ -117,7 +129,7 @@ const Projects = () => {
 
         {tab === "Projects" &&
           !search &&
-          projects?.map((p) => (
+          currentTableData.map((p) => (
             <Project
               key={p.id}
               project={p}
@@ -127,6 +139,13 @@ const Projects = () => {
             />
           ))}
       </section>
+
+      <Pagination
+        currentPage={currentPage}
+        totalCount={search && tab === "Projects" ? 0 : projects.length}
+        pageSize={maxItems}
+        onPageChange={(page) => setCurrentPage(page)}
+      />
     </motion.section>
   );
 };

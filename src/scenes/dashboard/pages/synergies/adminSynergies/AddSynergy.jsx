@@ -49,47 +49,50 @@ const AddSynergy = ({ setIsModal }) => {
       >
         {(formik) => {
           return (
-            <Form className="edit__form">
+            <Form className="form">
               {/* name */}
 
-              <div className="edit__div">
-                <label htmlFor="name" className="edit__label">
+              <div className="form__div">
+                <label htmlFor="name" className="form__label">
                   name
                 </label>
-                <Field type="text" className="edit__input" name="name" />
+                <Field type="text" className="form__input" name="name" />
                 <ErrorMessage name="name">
-                  {(errMessage) => <p className="edit__error">*{errMessage}</p>}
+                  {(errMessage) => <p className="form__error">*{errMessage}</p>}
                 </ErrorMessage>
               </div>
 
               {/* image */}
 
-              <div className="edit__div">
-                <label htmlFor="image" className="edit__label">
+              <div className="form__div">
+                <label htmlFor="image" className="form__label">
                   image
                 </label>
-                <Field type="text" className="edit__input" name="image" />
+                <Field type="text" className="form__input" name="image" />
                 <ErrorMessage name="image">
-                  {(errMessage) => <p className="edit__error">*{errMessage}</p>}
+                  {(errMessage) => <p className="form__error">*{errMessage}</p>}
                 </ErrorMessage>
               </div>
 
               {/* price*/}
-              <div className="edit__div">
-                <label htmlFor="des" className="edit__label">
+              <div className="form__div">
+                <label htmlFor="des" className="form__label">
                   price
                 </label>
                 <Field
                   rows={5}
                   type="number"
-                  className="edit__input"
+                  className="form__input"
                   name="price"
                 />
                 <ErrorMessage name="price">
-                  {(errMessage) => <p className="edit__error">*{errMessage}</p>}
+                  {(errMessage) => <p className="form__error">*{errMessage}</p>}
                 </ErrorMessage>
               </div>
-              <button type="submit"> ok</button>
+              <button type="submit" className="btn">
+                {" "}
+                ok
+              </button>
             </Form>
           );
         }}

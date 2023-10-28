@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PopupPendingSynergy from "./PopupPendingSynergy";
 
 const PendingSynergy = ({ pensyn }) => {
@@ -11,12 +11,18 @@ const PendingSynergy = ({ pensyn }) => {
     console.log("close");
     setIsModal(false);
   };
+
+  useEffect(() => {
+    const body = document.querySelector("body");
+    body.style.overflow = isModal ? "hidden" : "auto";
+  }, [isModal]);
+
   return (
     <>
       {isModal && (
         <PopupPendingSynergy closeModal={closeModal} pendingSyn={pensyn} />
       )}
-      <article className="synergy " onClick={openModal}>
+      <article className="synergy active-syn " onClick={openModal}>
         <img src={img} alt={name} className="synergy__img" />
 
         <div className="synergy__info">

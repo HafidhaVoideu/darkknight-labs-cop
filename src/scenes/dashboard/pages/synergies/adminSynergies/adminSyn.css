@@ -10,26 +10,14 @@
 }
 
 .synergy-op__title {
-  font-size: 2.2rem;
+  font-size: 1.5rem;
   text-align: center;
 }
-.synergy-op__select {
-  color: grey;
-}
 
-.synergy-op input {
-  padding: 0.6rem;
-}
-.synergy-op label {
-  font-weight: bold;
-}
 .synergy-op button {
-  margin: 1rem 0rem;
-  align-self: center;
-  background-color: rgb(44, 44, 44);
-  padding: 0.7rem 2rem;
-  font-weight: bold;
-  color: var(--crimson);
+  margin: 1rem auto 0rem;
+
+  max-width: max-content;
 }
 
 .synergy-op button:disabled {

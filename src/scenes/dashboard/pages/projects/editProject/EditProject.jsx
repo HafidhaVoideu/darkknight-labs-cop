@@ -118,7 +118,7 @@ const EditProject = ({ project, closeModal }) => {
         >
           {(formik) => {
             return (
-              <Form className="edit__form">
+              <Form className="form">
                 {/* name */}
                 <div className="modal__icons">
                   <button
@@ -139,83 +139,83 @@ const EditProject = ({ project, closeModal }) => {
                   </button>
                 </div>
 
-                <div className="edit__div">
-                  <label htmlFor="name" className="edit__label">
+                <div className="form__div">
+                  <label htmlFor="name" className="form__label">
                     name
                   </label>
-                  <Field type="text" className="edit__input" name="name" />
+                  <Field type="text" className="form__input" name="name" />
                   <ErrorMessage name="name">
                     {(errMessage) => (
-                      <p className="edit__error">*{errMessage}</p>
+                      <p className="form__error">*{errMessage}</p>
                     )}
                   </ErrorMessage>
                 </div>
 
                 {/* image */}
 
-                <div className="edit__div">
-                  <label htmlFor="image" className="edit__label">
+                <div className="form__div">
+                  <label htmlFor="image" className="form__label">
                     image
                   </label>
-                  <Field type="text" className="edit__input" name="image" />
+                  <Field type="text" className="form__input" name="image" />
                   <ErrorMessage name="image">
                     {(errMessage) => (
-                      <p className="edit__error">*{errMessage}</p>
+                      <p className="form__error">*{errMessage}</p>
                     )}
                   </ErrorMessage>
                 </div>
 
                 {/* Description*/}
-                <div className="edit__div">
-                  <label htmlFor="des" className="edit__label">
+                <div className="form__div">
+                  <label htmlFor="des" className="form__label">
                     description
                   </label>
                   <Field
                     as="textarea"
                     rows={5}
                     type="text"
-                    className="edit__input"
+                    className="form__input"
                     name="des"
                   />
                   <ErrorMessage name="des">
                     {(errMessage) => (
-                      <p className="edit__error">*{errMessage}</p>
+                      <p className="form__error">*{errMessage}</p>
                     )}
                   </ErrorMessage>
                 </div>
                 {/* Discord*/}
-                <div className="edit__div">
-                  <label htmlFor="discord" className="edit__label">
+                <div className="form__div">
+                  <label htmlFor="discord" className="form__label">
                     discord
                   </label>
-                  <Field type="text" className="edit__input" name="discord" />
+                  <Field type="text" className="form__input" name="discord" />
                   <ErrorMessage name="discord">
                     {(errMessage) => (
-                      <p className="edit__error">*{errMessage}</p>
+                      <p className="form__error">*{errMessage}</p>
                     )}
                   </ErrorMessage>
                 </div>
                 {/* Twitter*/}
-                <div className="edit__div">
-                  <label htmlFor="twitter" className="edit__label">
+                <div className="form__div">
+                  <label htmlFor="twitter" className="form__label">
                     twitter
                   </label>
-                  <Field type="text" className="edit__input" name="twitter" />
+                  <Field type="text" className="form__input" name="twitter" />
                   <ErrorMessage name="twitter">
                     {(errMessage) => (
-                      <p className="edit__error">*{errMessage}</p>
+                      <p className="form__error">*{errMessage}</p>
                     )}
                   </ErrorMessage>
                 </div>
                 {/* Website */}
-                <div className="edit__div">
-                  <label htmlFor="website" className="edit__label">
+                <div className="form__div">
+                  <label htmlFor="website" className="form__label">
                     website
                   </label>
-                  <Field type="text" className="edit__input" name="website" />
+                  <Field type="text" className="form__input" name="website" />
                   <ErrorMessage name="website">
                     {(errMessage) => (
-                      <p className="edit__error">*{errMessage}</p>
+                      <p className="form__error">*{errMessage}</p>
                     )}
                   </ErrorMessage>
                 </div>

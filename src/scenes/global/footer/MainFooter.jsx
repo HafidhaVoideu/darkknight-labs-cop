@@ -1,24 +1,18 @@
 import React from "react";
 
-import { FaFacebookSquare, FaTelegramPlane, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { BsDiscord } from "react-icons/bs";
 import "./footer.css";
 
 const MainFooter = () => {
   return (
     <footer id="footer" className="footer">
       <div className="footer__main">
-        <a href="#">
+        <a href="https://twitter.com/darknightlabs">
           <FaXTwitter />
         </a>
         <a href="#">
-          <FaTelegramPlane />
-        </a>
-        <a href="#">
-          <FaInstagram />
-        </a>
-        <a href="#">
-          <FaFacebookSquare />
+          <BsDiscord />
         </a>
       </div>
       <p> &#169; All rights reserved to Darkknight Labs 2023</p>

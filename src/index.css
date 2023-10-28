@@ -40,10 +40,12 @@ html {
 }
 ::-webkit-scrollbar-track {
   background-color: #686666;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: #212121;
+  border-radius: 10px;
 }
 
 ::selection {
@@ -123,6 +125,14 @@ p {
     max-width: 800px;
   }
 }
+@media screen and (min-width: 1281px) {
+  .title {
+    font-size: 3.9rem;
+  }
+  p {
+    max-width: 800px;
+  }
+}
 
 .text-effect {
   position: relative;
@@ -188,7 +198,7 @@ p {
   position: relative;
   border-radius: 2px;
   border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 4px 30px rgba(31, 31, 31, 0.8);
   backdrop-filter: blur(4.7px);
   -webkit-backdrop-filter: blur(4.7px);
 }
@@ -312,8 +322,25 @@ img {
   border-radius: 50%;
 }
 
-.avatar img {
+.avatar2 {
+  width: 28%;
+  border-radius: 50%;
+}
+
+.avatar img,
+.avatar2 img {
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: inherit;
+}
+
+.active-link {
+  text-shadow: 0 0 10px #dcca87, 0 0 17px #dcca87, 0 0 10px #dcca87,
+    0 0 80px #dcca87, 0 0 90px #dcca87;
+}
+
+@media screen and (min-width: 1024px) {
+  .avatar2 {
+    width: 38%;
+  }
 }

@@ -13,12 +13,17 @@ const ValidatedSyn = ({ syn }) => {
     setIsModal(true);
   };
 
+  useEffect(() => {
+    const body = document.querySelector("body");
+    body.style.overflow = isModal ? "hidden" : "auto";
+  }, [isModal]);
+
   return (
     <>
       {isModal && (
         <ValidatedSynPopup closeModal={closeModal} validatedSyn={syn} />
       )}
-      <article className="synergy   vsyn  dropshadow" onClick={openModal}>
+      <article className="synergy   vsyn  " onClick={openModal}>
         <img src={img} alt={name} className="synergy__img" />
 
         <div className="synergy__info">

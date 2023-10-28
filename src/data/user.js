@@ -3,7 +3,7 @@ export const user = {
   name: "Martin Marxinton",
   idrkn: "4495",
   drkn: "777",
-  role: "validUser",
+  role: "admin",
 
   projects: [
     {

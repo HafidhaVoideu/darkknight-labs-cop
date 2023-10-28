@@ -63,7 +63,7 @@ const Popup = ({ project, closeModal, icons = true }) => {
 
   return (
     <div id="myModal" className="modal  ">
-      <div className="modal-content dropshadow">
+      <div className="modal-content ">
         <div className="modal__icons">
           {icons && (
             <div className="popup__btns">

@@ -6,9 +6,9 @@
   align-items: center;
   flex: 1;
   justify-content: space-around;
-  width: 19rem;
+  width: 20rem;
   height: 100vh;
-  z-index: 20;
+  z-index: 30;
   padding: 2rem 0rem;
 
   background-color: #0e0e0e;
@@ -33,7 +33,7 @@
   right: 15px;
 }
 .dashboard-aside__btn--open {
-  position: fixed;
+  position: relative;
   font-size: 1.6rem;
   top: 1px;
   left: 15px;
@@ -46,13 +46,8 @@
   gap: 1rem;
 }
 
-.dashboard-aside__img {
-  width: 80px;
-  height: 80px;
-}
-
 .dashboard-aside__wallet {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   background-color: rgb(26, 26, 26);
   padding: 1rem;
 }
@@ -96,6 +91,11 @@
   color: var(--golden);
 }
 
+#inactive-link {
+  cursor: default;
+  color: grey;
+}
+
 @media screen and (min-width: 500px) {
   .dashboard-aside__list {
     gap: 2rem;
@@ -104,5 +104,6 @@
 @media screen and (min-width: 1024px) {
   .dashboard-aside {
     position: sticky;
+    inset: 0;
   }
 }

@@ -64,4 +64,21 @@
   .home__btn {
     font-size: 1.2rem;
   }
+
+  .home__img {
+    width: 75%;
+  }
+}
+
+@media screen and (min-width: 1281px) {
+  .home__btn {
+    font-size: 1.4rem;
+  }
+
+  .home__img {
+    width: 90%;
+  }
+  .home__frame {
+    width: 500px;
+  }
 }

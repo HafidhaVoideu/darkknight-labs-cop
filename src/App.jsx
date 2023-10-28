@@ -11,7 +11,6 @@ import FeaturedProj from "./scenes/dashboard/pages/featuredProjects/FeaturedProj
 import PendingSynergies from "./scenes/dashboard/pages/pendingSynergies/PendingSynergies";
 import ProjectToRender from "./scenes/dashboard/pages/projects/project/ProjectToRender";
 import SynergyToRender from "./scenes/dashboard/pages/synergies/SynergyToRender";
-
 function App() {
   const location = useLocation();
   const { setTab } = useGlobalContextUser();

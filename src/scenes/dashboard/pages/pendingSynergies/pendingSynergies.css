@@ -21,20 +21,20 @@
 }
 
 .pyn__popup__btn {
-  border: solid 2px rgb(52, 51, 51);
+  border: solid 1px var(--crimson);
 
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-weight: bold;
   color: var(--crimson);
 
   margin-top: 2.2rem;
-  margin-right: 0.5rem;
-  padding: 0.7rem 1rem;
+  margin-right: 1rem;
+  padding: 0.5rem 1.4rem;
 }
 .pyn__popup__btn:hover {
   transition: all 0.3s ease-in-out;
 
-  background-color: rgb(219, 217, 217);
+  background-color: var(--golden);
   color: var(--gray);
 }
 .margin--top {

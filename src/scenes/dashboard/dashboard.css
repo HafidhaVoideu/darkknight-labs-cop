@@ -11,7 +11,6 @@
   display: grid;
   min-height: 100vh;
   width: 100%;
-  max-width: 1500px;
   flex: 4;
 }
 
@@ -25,9 +24,9 @@
 .dropshadow {
   border-radius: 2px;
   border-radius: 16px;
-  box-shadow: 0 4px 30px #1f1f1f;
-  backdrop-filter: blur(4.7px);
-  -webkit-backdrop-filter: blur(4.7px);
+  box-shadow: 0 4px 30px #0d0d0d;
+  backdrop-filter: blur(4.2px);
+  -webkit-backdrop-filter: blur(4.2px);
 }
 
 .dashboard img {
@@ -90,9 +89,11 @@
   padding: 0px 20px;
   max-width: 400px;
   width: 80%;
+  border-radius: 10px;
   overflow-y: auto;
   max-height: 700px;
-  min-height: 500px;
+  height: auto;
+  min-height: 400px;
   background-color: rgb(22, 22, 22);
 }
 
@@ -110,16 +111,23 @@
 .dashboard * {
   font-family: "Didact Gothic", sans-serif;
 }
-/* ************************* Popup ****************************** */
+
+.dashboard__options {
+  display: flex;
+  /* margin: 1rem 0rem; */
+  align-items: flex-start;
+  padding-top: 0.5rem;
+}
+/* ************************* dashboard cards ****************************** */
 /* ************************************************************** */
 
 .profile__projects {
   display: grid;
-  margin: 3rem auto;
-  grid-template-columns: repeat(auto-fit, minmax(min-content, 340px));
-  place-items: center;
-
-  justify-content: center;
+  margin: 0rem auto;
+  grid-template-columns: repeat(auto-fit, minmax(min-content, 330px));
+  justify-items: start;
+  place-content: start;
+  min-height: 70vh;
   gap: 2rem;
 }
 
@@ -133,11 +141,31 @@
 
   color: var(--crimson);
 }
+
+.profile__project,
+.synergy {
+  border-radius: 2px;
+  border-radius: 16px;
+  background-color: rgb(19, 19, 19);
+  box-shadow: 0 4px 30px rgba(41, 41, 41, 0.8);
+  backdrop-filter: blur(4.7px);
+  -webkit-backdrop-filter: blur(4.7px);
+  padding: 0.9rem;
+}
+
 .profile__project:hover {
   opacity: 0.8;
   cursor: pointer;
   transform: scale(1.02);
   transition: all ease-in-out 0.3s;
+}
+
+.profile__project__des span {
+  color: var(--golden);
+}
+
+.profile__project__des {
+  line-height: 1.4;
 }
 
 .profile__project__info {
@@ -239,35 +267,73 @@
   }
 }
 
-/* ************************* Synergies ****************************** */
+/* ************************* form ****************************** */
 /* ************************************************************** */
 
-.synergies {
+.form {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min-content, 290px));
-  place-content: center;
-  gap: 3rem;
-}
-.synergy {
-  display: flex;
-
-  justify-content: space-between;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 1rem;
+  padding: 2rem 1rem;
   gap: 1rem;
 }
 
-.synergy__price {
-  color: var(--golden);
-  font-size: 1.2rem;
-  margin-top: 0.5rem;
-
+.form__input,
+.form__textarea {
+  padding: 0.5rem;
+  background-color: rgb(56, 55, 55);
+  color: white;
+  box-shadow: none;
+  border: none;
   font-weight: bold;
-  text-align: center;
+  border-radius: 5px;
 }
-.synergy__name {
-  font-size: 1.4rem;
+
+.form__label {
+  text-align: left;
   color: var(--crimson);
-  font-style: italic;
+  font-weight: bold;
+  font-size: 1.03rem;
+  text-transform: capitalize;
+}
+
+.projects__unavailable {
+  text-align: center;
+  color: grey;
+  margin-top: 9rem;
+  font-size: 2rem;
+}
+
+.form__div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form__error {
+  color: crimson;
+  text-align: left;
+}
+
+.form__select {
+  padding: 0.5rem;
+  color: rgb(30, 29, 29);
+}
+
+.btns {
+  display: flex;
+  margin-top: 2rem;
+  align-items: center;
+  gap: 2rem;
+  justify-content: center;
+}
+.btn {
+  background-color: rgb(90, 91, 90);
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  padding: 0.5rem 2rem;
+  color: var(--crimson);
+  border-radius: 5px;
+}
+.btn:hover {
+  background-color: var(--golden);
+  color: rgb(12, 12, 12);
 }

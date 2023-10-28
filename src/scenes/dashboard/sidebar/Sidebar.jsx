@@ -14,7 +14,7 @@ import { links } from "../../../constants/const";
 const Sidebar = () => {
   const [open, cycleOpen] = useCycle(false, true);
   const navigate = useNavigate();
-  const { setTab, user } = useGlobalContextUser();
+  const { setTab, user, tab } = useGlobalContextUser();
 
   const itemVariants = {
     closed: {
@@ -51,17 +51,28 @@ const Sidebar = () => {
               transition: { delay: 0.7, duration: 0.3 },
             }}
           >
-            <div className="dashboard-aside__info">
-              <img
-                src={profile}
-                alt="profile"
-                className="dashboard-aside__img"
-              />
+            <div
+              className="avatar2   dashboard-aside__img glow-effect"
+              data-glow-animation="grow"
+            >
+              <img src={profile} alt="profile-image" className="card__img" />
+              <svg className="glow-container">
+                <rect
+                  pathLength="100"
+                  strokeLinecap="round"
+                  className="glow-blur"
+                ></rect>
+                <rect
+                  pathLength="100"
+                  strokeLinecap="round"
+                  className="glow-line"
+                ></rect>
+              </svg>
+            </div>
 
-              <div className="dashboard-aside__user">
-                <p>{user.name}</p>
-                <p>({user.role})</p>
-              </div>
+            <div className="dashboard-aside__user">
+              <p>{user.name}</p>
+              <p>({user.role})</p>
 
               <div className="dashboard-aside__wallet">
                 <p>
@@ -99,9 +110,9 @@ const Sidebar = () => {
                   return (
                     <motion.a
                       key={id}
-                      whileHover={{ scale: 1.1 }}
+                      whileHover={{ scale: 1 }}
                       variants={itemVariants}
-                      style={{ color: "grey" }}
+                      id="inactive-link"
                     >
                       {name}
                     </motion.a>
@@ -116,6 +127,7 @@ const Sidebar = () => {
                       setTab(name);
                       navigate(to);
                     }}
+                    className={`${tab === name && "active-link"} `}
                   >
                     {name}
                   </motion.a>

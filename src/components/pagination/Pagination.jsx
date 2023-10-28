@@ -1,7 +1,6 @@
-import { usePagination } from "../../hooks/usePagination";
-
 import React from "react";
 
+import { usePagination } from "../../hooks/usePagination";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import "./pagination.css";
 
@@ -9,25 +8,26 @@ const Pagination = ({
   totalCount,
   pageSize,
   siblingCount = 1,
-  page: currentPage, // current page
-  setPage: onPageChange,
+  currentPage, // current page
+  onPageChange,
 }) => {
-  const paginationRange =
-    usePagination({
-      totalCount,
-      pageSize,
-      siblingCount,
-      currentPage,
-    }) || [];
+  const paginationRange = usePagination({
+    totalCount,
+    pageSize,
+    siblingCount,
+    currentPage,
+  });
 
-  if (currentPage === 1 || paginationRange.length < 2) return null;
+  if (currentPage === 0 || paginationRange.length < 2) {
+    return null;
+  }
 
   const nextPage = () => {
-    onPageChange((prev) => prev + 1);
+    onPageChange(Math.min(currentPage + 1, paginationRange.length));
   };
 
   const previousPage = () => {
-    onPageChange((prev) => prev - 1);
+    onPageChange(Math.max(currentPage - 1, 1));
   };
 
   let lastPage = paginationRange[paginationRange.length - 1];
@@ -35,7 +35,7 @@ const Pagination = ({
   return (
     <ul className="pagination-container">
       <li
-        onClick={nextPage}
+        onClick={previousPage}
         className={`pagination-item  ${currentPage === 1 && "disable-btn"}`}
       >
         <MdKeyboardArrowLeft />
@@ -54,8 +54,8 @@ const Pagination = ({
               key={pageNumber}
               onClick={() => onPageChange(pageNumber)}
               className={`pagination-item  ${
-                currentPage === pageNumber
-              } && "select-btn"`}
+                currentPage === pageNumber && "active-link"
+              } `}
             >
               {pageNumber}
             </li>
@@ -63,7 +63,7 @@ const Pagination = ({
       })}
 
       <li
-        onClick={previousPage}
+        onClick={nextPage}
         className={`pagination-item   ${
           currentPage === lastPage && "disable-btn"
         }`}

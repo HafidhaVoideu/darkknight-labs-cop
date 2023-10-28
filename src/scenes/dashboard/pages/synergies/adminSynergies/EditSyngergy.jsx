@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Select from "react-select";
 
 import { useGlobalContextUser } from "../../../../../context/context";
 const EditSyngergy = ({ setIsModal }) => {
   const [select, setSelect] = useState();
   const [price, setPrice] = useState();
-
   const { synergies, setSynergies } = useGlobalContextUser();
 
   const options = synergies.map((p) => {
@@ -27,16 +26,12 @@ const EditSyngergy = ({ setIsModal }) => {
 
   return (
     <article className="synergy-op">
-      <h1 className="synergy-op__title">Add Price</h1>
-      <form
-        id="editSynForm"
-        onSubmit={handleSubmit}
-        className="synergy-op__form"
-      >
+      <h1 className="synergy-op__title">Edit Price</h1>
+      <form id="editSynForm" onSubmit={handleSubmit} className="form">
         <label htmlFor="syn">Synergies</label>
         <Select
           id="syn"
-          className="synergy-op__select"
+          className="select"
           defaultvalue={select}
           onChange={(select) => setSelect(select)}
           isClearable={false}
@@ -45,8 +40,11 @@ const EditSyngergy = ({ setIsModal }) => {
           name="secondary projects"
         />
 
-        <label htmlFor="price">price</label>
+        <label htmlFor="price" className="label">
+          price
+        </label>
         <input
+          className="input"
           id="price"
           name="price"
           type="number"
@@ -54,7 +52,9 @@ const EditSyngergy = ({ setIsModal }) => {
           onChange={(e) => setPrice(e.target.value)}
           placeholder="enter your price"
         />
-        <button type="submit">ok</button>
+        <button type="submit" className="btn">
+          ok
+        </button>
       </form>
     </article>
   );

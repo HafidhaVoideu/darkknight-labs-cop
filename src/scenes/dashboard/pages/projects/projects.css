@@ -1,12 +1,10 @@
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min-content, 290px));
-  place-items: center;
-  place-content: center;
-  gap: 1.5rem;
+  gap: 1.8rem;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 900px) {
   .projects {
     display: block;
   }

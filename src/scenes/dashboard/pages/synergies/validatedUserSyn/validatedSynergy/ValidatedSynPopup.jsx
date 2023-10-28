@@ -68,7 +68,7 @@ const ValidatedSynPopup = ({ validatedSyn, closeModal }) => {
 
   return (
     <div id="myModal" className="modal  ">
-      <div className="modal-content dropshadow">
+      <div className="modal-content">
         <div className="modal__icons">
           <button onClick={closeModal} className="popup__close-btn margin--top">
             <AiOutlineClose />

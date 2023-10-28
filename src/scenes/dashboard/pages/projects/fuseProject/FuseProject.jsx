@@ -6,11 +6,11 @@ import "./fuseProject.css";
 
 const FuseProject = ({ closeModal }) => {
   const [page, setPage] = useState(0);
-  const [select, setSelect] = useState({});
+  const [select, setSelect] = useState();
   const [multipleSelect, setMultipleSelect] = useState([]);
   const { projects, setAlert, setProjects } = useGlobalContextUser();
 
-  const [masterOptions, setMasterOptions] = useState([]);
+  const [masterOptions, setMasterOptions] = useState();
 
   const options = projects.map((p) => {
     return { value: p.id, label: p.name };
@@ -24,8 +24,6 @@ const FuseProject = ({ closeModal }) => {
 
     setMasterOptions(options2);
   }, [multipleSelect]);
-
-  useEffect(() => {}, [select]);
 
   const nextPage = () => {
     setPage((page) => (page = page + 1));
@@ -41,6 +39,8 @@ const FuseProject = ({ closeModal }) => {
 
     console.log("temp:", temp);
     setProjects(temp);
+
+    closeModal();
     setAlert({
       isAlert: true,
       alertMessage: `Projects have been fused`,
@@ -61,7 +61,9 @@ const FuseProject = ({ closeModal }) => {
         isMulti
         name="master project"
       />
-      <button onClick={nextPage}>next</button>
+      <button onClick={nextPage} className="btn">
+        next
+      </button>
     </article>
   );
 
@@ -79,16 +81,20 @@ const FuseProject = ({ closeModal }) => {
         name="secondary projects"
       />
 
-      <div className="fuse-panel__btns">
-        <button onClick={previousPage}>previous</button>
-        <button onClick={handleFusion}>Fuse</button>
+      <div className="btns">
+        <button className="btn" onClick={previousPage}>
+          previous
+        </button>
+        <button className="btn" onClick={handleFusion}>
+          Fuse
+        </button>
       </div>
     </article>
   );
 
   return (
     <div id="myModal" className="modal  ">
-      <div className="modal-content dropshadow fuse-modal ">
+      <div className="modal-content  fuse-modal ">
         <div className="modal__icons">
           <button onClick={closeModal} className="popup__close-btn margin--top">
             <AiOutlineClose />

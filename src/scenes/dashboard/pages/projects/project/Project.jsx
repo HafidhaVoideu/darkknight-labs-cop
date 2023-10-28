@@ -49,7 +49,7 @@ const Project = ({
       else return project;
     });
 
-    setProjects(temp);
+    setProjects([...temp]);
   };
 
   const removeFromFeatures = () => {
@@ -57,7 +57,8 @@ const Project = ({
       if (id === project.id) return { ...project, featured: false };
       else return project;
     });
-    setProjects(temp);
+
+    setProjects([...temp]);
   };
 
   useEffect(() => {

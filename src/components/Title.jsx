@@ -4,7 +4,7 @@ import { textVariant2 } from "../utils/motion";
 
 const Title = ({ text }) => {
   return (
-    <div className="flex flex-col items-center gap-3  my-14  lg:my-20">
+    <div>
       <motion.h1
         className=" text-effect title"
         variants={textVariant2}

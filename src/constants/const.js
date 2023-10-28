@@ -7,3 +7,5 @@ export const links = [
   { name: "Ruffles", to: "#", id: 5 },
   { name: "Auctions", to: "#", id: 6 },
 ];
+
+export const maxItems = 8;

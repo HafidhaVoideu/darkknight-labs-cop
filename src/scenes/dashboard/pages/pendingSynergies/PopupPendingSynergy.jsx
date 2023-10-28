@@ -20,9 +20,9 @@ const PopupPendingSynergy = ({ pendingSyn, closeModal }) => {
             <h1 className="pyn__popup__price"> {pendingSyn.price} </h1>
           </div>
 
-          <div className="pyn__popup__btns">
-            <button className="pyn__popup__btn">Confirm</button>
-            <button className="pyn__popup__btn">Refuse</button>
+          <div className="btns">
+            <button className="btn">Confirm</button>
+            <button className="btn">Refuse</button>
           </div>
         </article>
       </div>
