@@ -35,7 +35,7 @@ html {
   font-family: "MedievalSharp", cursive;
 }
 
-::-webkit-scrollbar {
+html::-webkit-scrollbar {
   width: 9px;
 }
 ::-webkit-scrollbar-track {
@@ -341,6 +341,6 @@ img {
 
 @media screen and (min-width: 1024px) {
   .avatar2 {
-    width: 38%;
+    width: 34%;
   }
 }

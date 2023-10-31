@@ -22,12 +22,11 @@ const DeleteSynergy = ({ setIsModal }) => {
   return (
     <article className="synergy-op">
       <h1 className="synergy-op__title">Delete Synergies </h1>
-      <form
-        id="dltSynForm"
-        onSubmit={handleSubmit}
-        className="synergy-op__form"
-      >
-        <label htmlFor="syn">Synergies</label>
+      <form id="dltSynForm" onSubmit={handleSubmit} className="form">
+        <label htmlFor="syn" className="form__label">
+          {" "}
+          Synergies
+        </label>
         <Select
           className="fuse-panel__select"
           value={multipleSelect}
@@ -39,7 +38,9 @@ const DeleteSynergy = ({ setIsModal }) => {
           name="master project"
         />
 
-        <button type="submit">ok</button>
+        <button type="submit" className="btn">
+          ok
+        </button>
       </form>
     </article>
   );

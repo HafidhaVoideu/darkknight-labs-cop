@@ -12,8 +12,7 @@ import PendingSynergies from "./scenes/dashboard/pages/pendingSynergies/PendingS
 import ProjectToRender from "./scenes/dashboard/pages/projects/project/ProjectToRender";
 import SynergyToRender from "./scenes/dashboard/pages/synergies/SynergyToRender";
 
-import axios from "axios";
-
+import axios from "./axios/axios";
 const access_token =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRubEJvdCIsImlhdCI6MTY5NDU0NTE0M30.-1kktNej16aURKwdXa1K-4-zwC9b_t0EkAmEewJFF5c";
 
@@ -34,28 +33,43 @@ function App() {
     if (activeTab) setTab(activeTab.name);
   }, [location.pathname]);
 
-  const config = {
-    headers: {
-      Authorization: `Bearer ${access_token}`,
-      "Access-Control-Allow-Origin": "*",
-      "Access-Control-Allow-Headers":
-        "Origin, X-Requested-With, Content-Type, Accept, Authorization",
-      "Access-Control-Request-Method": "GET, POST, DELETE, PUT, OPTIONS",
-    },
-  };
+  // const headers = {
+  //   Authorization: `Bearer ${access_token}`,
+  //     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+  //      "Content-Type": "application/json",
+  //   Accept: "application/json",
+  // };
+
+  // async function getPorjects() {
+  //   try {
+  //     const response = await fetch("http://68.183.108.138:3000/api/projects/", {
+  //       method: "GET", // or 'PUT'
+  //       mode: "cors",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         Authorization:
+  //           "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRubEJvdCIsImlhdCI6MTY5NDU0NTE0M30.-1kktNej16aURKwdXa1K-4-zwC9b_t0EkAmEewJFF5c",
+  //       },
+
+  //       "Access-Control-Allow-Origin": "",
+  //     });
+
+  //     const result = await response.json();
+  //     console.log("Success:", result);
+  //   } catch (error) {
+  //     console.error("Error:", error);
+  //   }
+  // }
 
   useEffect(() => {
     axios
-      .get("https://68.183.108.138:3000/api/projects/", {}, config)
+      .get("/api/projects/")
       .then((response) => console.log("response:", response.data))
       .catch((error) => console.log("error", error.response?.status));
   }, []);
-
   return (
     <>
-      <div></div>
-
-      {/* <Routes>
+      <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index element={<FeaturedProj />} />
@@ -64,10 +78,8 @@ function App() {
           <Route path="projects" element={<ProjectToRender />} />
           <Route path="synergies" element={<SynergyToRender />} />
           <Route path="pendingsynergies" element={<PendingSynergies />} />
-        </Route> */}
-
-      {/* <Route path="/*" element={<NotFound />}></Route> */}
-      {/* </Routes> */}
+        </Route>
+      </Routes>
     </>
   );
 }

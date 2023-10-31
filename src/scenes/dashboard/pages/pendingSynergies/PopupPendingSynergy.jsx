@@ -8,7 +8,7 @@ const PopupPendingSynergy = ({ pendingSyn, closeModal }) => {
     <div id="myModal" className="modal  ">
       <div className="modal-content dropshadow">
         <div className="modal__icons">
-          <button onClick={closeModal} className="popup__close-btn margin--top">
+          <button onClick={closeModal} className="popup__close-btn ">
             <AiOutlineClose />
           </button>
         </div>
@@ -17,7 +17,7 @@ const PopupPendingSynergy = ({ pendingSyn, closeModal }) => {
           <div className="pyn__popup__info">
             <h1 className="pyn__popup__name"> {pendingSyn.name} </h1>
             <img className="pyn__popup__img" src={pendingSyn.img} />
-            <h1 className="pyn__popup__price"> {pendingSyn.price} </h1>
+            <h1 className="pyn__popup__price"> {pendingSyn.price} Idkn</h1>
           </div>
 
           <div className="btns">

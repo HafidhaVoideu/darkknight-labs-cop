@@ -28,7 +28,9 @@ const EditSyngergy = ({ setIsModal }) => {
     <article className="synergy-op">
       <h1 className="synergy-op__title">Edit Price</h1>
       <form id="editSynForm" onSubmit={handleSubmit} className="form">
-        <label htmlFor="syn">Synergies</label>
+        <label htmlFor="syn" className="form__label">
+          Synergies
+        </label>
         <Select
           id="syn"
           className="select"
@@ -40,11 +42,11 @@ const EditSyngergy = ({ setIsModal }) => {
           name="secondary projects"
         />
 
-        <label htmlFor="price" className="label">
+        <label htmlFor="price" className="form__label">
           price
         </label>
         <input
-          className="input"
+          className="form__input"
           id="price"
           name="price"
           type="number"

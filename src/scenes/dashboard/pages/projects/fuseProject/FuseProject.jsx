@@ -94,7 +94,7 @@ const FuseProject = ({ closeModal }) => {
 
   return (
     <div id="myModal" className="modal  ">
-      <div className="modal-content  fuse-modal ">
+      <div className="modal-content  ">
         <div className="modal__icons">
           <button onClick={closeModal} className="popup__close-btn margin--top">
             <AiOutlineClose />

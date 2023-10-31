@@ -27,7 +27,7 @@ const PendingSynergy = ({ pensyn }) => {
 
         <div className="synergy__info">
           <h1 className="synergy__name">{name}</h1>
-          <p className="synergy__price">{price}</p>
+          <p className="synergy__price">{price} Idkn</p>
         </div>
       </article>
     </>
