@@ -5,27 +5,16 @@ import fetch from "node-fetch";
 const app = express();
 
 app.use(cors());
-const bodyParser = require("body-parser");
-app.use(bodyParser.json());
 
 // add middlewares
-const root = require("path").join(__dirname, "build");
-app.use(express.static(root));
+// const root = require("path").join(__dirname, "build");
+// app.use(express.static(root));
 
-app.use("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
-});
+// app.use("/*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "build", "index.html"));
+// });
 
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
-
-app.get("/", async (req, res, next) => {
+app.get("/", async (req, res) => {
   const response = await fetch("http://68.183.108.138:3000/api/projects/", {
     method: "GET", // or 'PUT'
     headers: {
