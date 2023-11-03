@@ -25,7 +25,7 @@
 }
 
 .service__icon {
-  width: 70px;
+  width: 55px;
 
   color: #d3d2cd;
   filter: invert(99%) sepia(3%) saturate(1543%) hue-rotate(328deg)
@@ -45,6 +45,9 @@
 }
 
 @media screen and (min-width: 600px) {
+  .service__icon {
+    width: 70px;
+  }
   .service__title {
     font-size: 1.1rem;
   }

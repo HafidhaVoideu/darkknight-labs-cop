@@ -12,15 +12,25 @@ import PendingSynergies from "./scenes/dashboard/pages/pendingSynergies/PendingS
 import ProjectToRender from "./scenes/dashboard/pages/projects/project/ProjectToRender";
 import SynergyToRender from "./scenes/dashboard/pages/synergies/SynergyToRender";
 
-import axios from "./axios/axios";
-const access_token =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRubEJvdCIsImlhdCI6MTY5NDU0NTE0M30.-1kktNej16aURKwdXa1K-4-zwC9b_t0EkAmEewJFF5c";
+import axios from "axios";
 
-axios.defaults.headers.common["Authorization"] = `Bearer ${access_token}`;
+// const access_token =
+//   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRubEJvdCIsImlhdCI6MTY5NDU0NTE0M30.-1kktNej16aURKwdXa1K-4-zwC9b_t0EkAmEewJFF5c";
+
+// axios.defaults.headers.common["Authorization"] = `Bearer ${access_token}`;
+
+// delete axios.defaults.headers.common["X-Requested-With"];
 
 function App() {
   const location = useLocation();
   const { setTab } = useGlobalContextUser();
+
+  // const axiosInstance = axios.create({
+  //   headers: {
+  //     Authorization:
+  //       "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRubEJvdCIsImlhdCI6MTY5NDU0NTE0M30.-1kktNej16aURKwdXa1K-4-zwC9b_t0EkAmEewJFF5c",
+  //   },
+  // });
 
   const [data, setData] = useState();
   useEffect(() => {
@@ -35,14 +45,27 @@ function App() {
 
   // const headers = {
   //   Authorization: `Bearer ${access_token}`,
-  //     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+  //     "Origin, X-Requested-With, Content-Type, Accept, Authorization",
   //      "Content-Type": "application/json",
   //   Accept: "application/json",
   // };
 
   async function getPorjects() {
     try {
-      const response = await fetch("http://localhost:3000/");
+      const response = await fetch(
+        "http://68.183.108.138:3000/api/projects/",
+
+        {
+          method: "GET", // *GET, POST, PUT, DELETE, etc.
+          Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRubEJvdCIsImlhdCI6MTY5NDU0NTE0M30.-1kktNej16aURKwdXa1K-4-zwC9b_t0EkAmEewJFF5c`,
+          Accept: "application/json",
+          cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+          headers: {
+            "Content-Type": "application/json",
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+          },
+        }
+      );
 
       const result = await response.json();
       console.log("Success:", result.data);
@@ -51,8 +74,41 @@ function App() {
     }
   }
 
+  const axiosInstance = axios.create({
+    headers: {
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRubEJvdCIsImlhdCI6MTY5NDU0NTE0M30.-1kktNej16aURKwdXa1K-4-zwC9b_t0EkAmEewJFF5c",
+    },
+  });
+
   useEffect(() => {
-    getPorjects();
+    // getPorjects();
+
+    // axios({
+    //   method: "get",
+    //   url: api + "/api/user/getUserInfo?UserId=1",
+    //   headers: { Authorization: "Bearer " + accessToken },
+    // });
+
+    axiosInstance
+      .get("http://68.183.108.138:3000/api/featuredprojects/")
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+
+    // axios
+    //   .get("/projects")
+    //   .then((response) => {
+    //     console.log(response.data);
+    //   })
+    //   .catch((error) => {
+    //     // Handle any errors here
+
+    //     console.log(error);
+    //   });
   }, []);
   return (
     <>

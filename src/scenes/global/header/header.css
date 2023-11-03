@@ -106,11 +106,36 @@
 
 .header__scroll-img {
   position: fixed;
-  bottom: 2%;
-  right: 1.5%;
+  bottom: 2.5%;
+  right: 2%;
   height: auto;
-  width: 30px;
+  width: 22px;
   cursor: pointer;
+}
+
+@media screen and (min-width: 500px) {
+  .header__logo-title {
+    font-size: 1.4rem;
+  }
+
+  .header__btn {
+    font-size: 1.9rem;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .header__desktop-nav {
+    display: block;
+    display: flex;
+    align-items: center;
+
+    gap: 2rem;
+    justify-content: center;
+  }
+  .header__btn {
+    display: none;
+    font-size: 2rem;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -133,20 +158,5 @@
   .header__scroll-btn {
     color: var(--crimson);
     font-size: 2.4rem;
-  }
-}
-
-@media screen and (min-width: 900px) {
-  .header__desktop-nav {
-    display: block;
-    display: flex;
-    align-items: center;
-
-    gap: 2rem;
-    justify-content: center;
-  }
-  .header__btn {
-    display: none;
-    font-size: 2rem;
   }
 }

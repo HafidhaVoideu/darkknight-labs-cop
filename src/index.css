@@ -181,7 +181,7 @@ p {
   place-items: center;
   max-width: 1200px;
   min-height: 50vh;
-  padding: 3rem 0rem;
+  padding: 3rem 0.6rem;
 
   margin: 0 auto;
 }

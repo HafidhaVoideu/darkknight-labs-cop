@@ -1,9 +1,9 @@
 .about {
-  text-align: left;
+  text-align: center;
   margin: 0 auto;
   line-height: 1.5;
   padding: 1rem;
-  font-size: 1.04rem;
+  font-size: 0.8rem;
   max-width: 700px;
 }
 
@@ -13,6 +13,7 @@
 
 .about__img1,
 .about__img2 {
+  display: none;
   position: absolute;
   width: 120px;
 }
@@ -27,8 +28,15 @@
   bottom: -5vh;
 }
 
-@media screen and (min-width: 300px) {
+@media screen and (min-width: 700px) {
   .about {
-    text-align: center;
+    font-size: 1.08rem;
+  }
+
+  .about__img1,
+  .about__img2 {
+    display: block;
+    position: absolute;
+    width: 120px;
   }
 }

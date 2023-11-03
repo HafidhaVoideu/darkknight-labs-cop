@@ -7,12 +7,12 @@ const app = express();
 app.use(cors());
 
 // add middlewares
-// const root = require("path").join(__dirname, "build");
-// app.use(express.static(root));
+const root = require("path").join(__dirname, "build");
+app.use(express.static(root));
 
-// app.use("/*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "build", "index.html"));
-// });
+app.use("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
+});
 
 app.get("/", async (req, res) => {
   const response = await fetch("http://68.183.108.138:3000/api/projects/", {
